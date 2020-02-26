@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200212123652486.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020021213115734.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2020-02-26T08:00:29.000Z">
-<meta property="article:modified_time" content="2020-02-26T13:02:53.015Z">
+<meta property="article:modified_time" content="2020-02-26T13:42:55.597Z">
 <meta property="article:author" content="GtJason1998">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200212132950250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center">
@@ -94,15 +94,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="距离多普勒-Range-Dopple-Matrix-处理方法"><a href="#距离多普勒-Range-Dopple-Matrix-处理方法" class="headerlink" title="距离多普勒(Range-Dopple Matrix)处理方法"></a>距离多普勒(Range-Dopple Matrix)处理方法</h1><p>&emsp;&emsp;众所周知，距离多普勒处理方法(Range-Dopple Matrix，简称RDM)是FMCW雷达进行多目标信息提取的有效手段，通过对雷达发送的多个周期的Chirp序列以及回波信息进行快时间维度和慢时间维度的处理，即可得到距离多普勒热力图，进而可以提取多目标的距离和速度信息。<br><img src="https://img-blog.csdnimg.cn/20200212132950250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>&emsp;&emsp;在FMCW的差拍信号中，我们知道，差拍信号的频率为<br>$$f_{movingBeat} = f_{staticBeat} \pm f_d = \frac{2f_cR}{Ct_c} \pm \frac{2fv}{C} \tag 1$$&emsp;&emsp;其中$f_{movingBeat}$和$f_{staticBeat}$分别为目标运动和静止状态下差拍信号的频率，$f_d$为多普勒频率，$f_c$为扫频带宽，$R$为目标距离，$C$为光速，$t_c$为扫频周期，$f$为Chirp信号中心频率，$v$为目标速度。</p>
-<h2 id="快时间维度处理-Range-FFT"><a href="#快时间维度处理-Range-FFT" class="headerlink" title="快时间维度处理(Range-FFT)"></a>快时间维度处理(Range-FFT)</h2><p>&emsp;&emsp;快时间维度即单个周期的Chirp序列扫频周期时间很短，短到几乎可以将多普勒频率带来的影响忽略不计($t_c$↓，公式(1)中$f_{staticBeat}$项占了主要的位置)，认为此时通过RDM热力图提取到的动目标在距离维度上的动目标差频$f_{movingBeat}$与静目标差频$f_{staticBeat}$近似相等，即$$f_{movingBeat} \approx f_{staticBeat} =  \frac{2f_cR}{Ct_c} \tag 2$$&emsp;&emsp;那么通过快时间维度的每一帧数据，提取频谱峰值对应的横坐标频率，即可对目标的距离进行求解；即$$R = \frac{Ct_c}{2f_c}\cdot f_{staticBeat} \tag 3$$&emsp;&emsp;快时间维处理示意图如下<br><img src="https://img-blog.csdnimg.cn/20200212133123832.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="慢时间维度处理-Doppler-FFT"><a href="#慢时间维度处理-Doppler-FFT" class="headerlink" title="慢时间维度处理(Doppler-FFT)"></a>慢时间维度处理(Doppler-FFT)</h2><p>&emsp;&emsp;因为我们知道，在快时间维的处理中，认为速度带来的影响忽略不计，通过对多个Chirp序列进行多帧数据的堆积，此时在第二个维度上(即慢时间维度上，多帧数据对应的同一距离单元上)速度带来的频率影响就不可忽略，此时慢时间维度上求得的频率即为多普勒频率，即$$f_d = \frac{2fv}{C} \tag 4$$&emsp;&emsp;所以有$$v = \frac{f_dC}{2f} \tag 5$$<br>&emsp;&emsp;慢时间维处理示意图如下<br><img src="https://img-blog.csdnimg.cn/20200212134519777.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>&emsp;&emsp;慢时间维度的处理是经过多个Chirp序列积累后对<strong>同一距离单元</strong>进行FFT的结果，故称为慢时间维度，</p>
+        <h1 id="距离多普勒-Range-Dopple-Matrix-处理方法"><a href="#距离多普勒-Range-Dopple-Matrix-处理方法" class="headerlink" title="距离多普勒(Range-Dopple Matrix)处理方法"></a>距离多普勒(Range-Dopple Matrix)处理方法</h1><p>&emsp;&emsp;众所周知，距离多普勒处理方法(Range-Dopple Matrix，简称RDM)是FMCW雷达进行多目标信息提取的有效手段，通过对雷达发送的多个周期的Chirp序列以及回波信息进行快时间维度和慢时间维度的处理，即可得到距离多普勒热力图，进而可以提取多目标的距离和速度信息。<br><img src="https://img-blog.csdnimg.cn/20200212132950250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>&emsp;&emsp;在FMCW的差拍信号中，我们知道，差拍信号的频率为</p>
+<script type="math/tex; mode=display">f_{movingBeat} = f_{staticBeat} \pm f_d = \frac{2f_cR}{Ct_c} \pm \frac{2fv}{C} \tag 1</script><p>&emsp;&emsp;其中$f_{movingBeat}$和$f_{staticBeat}$分别为目标运动和静止状态下差拍信号的频率，$f_d$为多普勒频率，$f_c$为扫频带宽，$R$为目标距离，$C$为光速，$t_c$为扫频周期，$f$为Chirp信号中心频率，$v$为目标速度。</p>
+<h2 id="快时间维度处理-Range-FFT"><a href="#快时间维度处理-Range-FFT" class="headerlink" title="快时间维度处理(Range-FFT)"></a>快时间维度处理(Range-FFT)</h2><p>&emsp;&emsp;快时间维度即单个周期的Chirp序列扫频周期时间很短，短到几乎可以将多普勒频率带来的影响忽略不计($t_c$↓，公式(1)中$f_{staticBeat}$项占了主要的位置)，认为此时通过RDM热力图提取到的动目标在距离维度上的动目标差频$f_{movingBeat}$与静目标差频$f_{staticBeat}$近似相等，即</p>
+<script type="math/tex; mode=display">f_{movingBeat} \approx f_{staticBeat} =  \frac{2f_cR}{Ct_c} \tag 2</script><p>&emsp;&emsp;那么通过快时间维度的每一帧数据，提取频谱峰值对应的横坐标频率，即可对目标的距离进行求解；即</p>
+<script type="math/tex; mode=display">R = \frac{Ct_c}{2f_c}\cdot f_{staticBeat} \tag 3</script><p>&emsp;&emsp;快时间维处理示意图如下<br><img src="https://img-blog.csdnimg.cn/20200212133123832.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="慢时间维度处理-Doppler-FFT"><a href="#慢时间维度处理-Doppler-FFT" class="headerlink" title="慢时间维度处理(Doppler-FFT)"></a>慢时间维度处理(Doppler-FFT)</h2><p>&emsp;&emsp;因为我们知道，在快时间维的处理中，认为速度带来的影响忽略不计，通过对多个Chirp序列进行多帧数据的堆积，此时在第二个维度上(即慢时间维度上，多帧数据对应的同一距离单元上)速度带来的频率影响就不可忽略，此时慢时间维度上求得的频率即为多普勒频率，即</p>
+<script type="math/tex; mode=display">f_d = \frac{2fv}{C} \tag 4</script><p>&emsp;&emsp;所以有</p>
+<script type="math/tex; mode=display">v = \frac{f_dC}{2f} \tag 5</script><p>&emsp;&emsp;慢时间维处理示意图如下<br><img src="https://img-blog.csdnimg.cn/20200212134519777.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>&emsp;&emsp;慢时间维度的处理是经过多个Chirp序列积累后对<strong>同一距离单元</strong>进行FFT的结果，故称为慢时间维度，</p>
 <blockquote>
 <p>为什么是同一距离单元？<br>因为Range-FFT中同一个横坐标对应相同的$f_{movingBeat}$，快时间维度下$f_{movingBeat}$约等于$f_{staticBeat}$，由公式(2)和公式(3)可知，对应同一距离单元</p>
 </blockquote>
 <p>&emsp;&emsp;快时间维度和慢时间维度处理总览<br><img src="https://img-blog.csdnimg.cn/20200212123652486.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>&emsp;&emsp;经过处理后可得到如下的距离多普勒热力图(Range-Dopple Heat Map)<br><img src="https://img-blog.csdnimg.cn/2020021213115734.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h1 id="RDM中距离分辨率和速度分辨率推导方法"><a href="#RDM中距离分辨率和速度分辨率推导方法" class="headerlink" title="RDM中距离分辨率和速度分辨率推导方法"></a>RDM中距离分辨率和速度分辨率推导方法</h1><p>&emsp;&emsp;网上关于RDM方法中距离分辨率和速度分辨率推导的资料实在太少，几乎都是两个长得不太好看公式直接糊你脸上，我的感受就是<del>老人、地铁、看手机.jpg</del>(此处省略表情包)，于是决定记录下推导过程，正所谓难者不会，会者不难。<br>&emsp;&emsp;首先回顾下数字信号处理中第K个采样点的频率$f_k$与采样频率$f_s$间的关系，我们知道，第K个采样点的角频率服从如下关系<br>$$\omega_k = \frac{k}{N_s}\cdot2\pi = \Omega\cdot T_s = 2 \pi f_k\cdot \frac{1}{f_s}$$<br>&emsp;&emsp;其中$N_s$为采样点数，$\Omega$为模拟角频率，$T_s$为采样频率，我们取出等式中的第二项和第四项，有<br>$$\frac{k}{N_s}\cdot2\pi =2 \pi f_k\cdot \frac{1}{f_s}$$&emsp;&emsp;可得第K个采样点的频率$f_k$与采样频率$f_s$间的关系为<br>$$f_k = k\cdot \frac{f_s}{N_s} \tag 6$$<br>&emsp;&emsp;到此就可以正式展开距离分辨率和速度分辨率的推导方法了，上一部分我们说到快时间维度的Range-FFT和慢时间维度的Doppler-FFT，有两个结论性的公式<br>$$ f_{movingBeat} \approx f_{staticBeat} =  \frac{2f_cR}{Ct_c} \tag 7$$ $$ f_d = \frac{2fv}{C}  \tag 8$$&emsp;&emsp;假设上一部分中距离多普勒热力图中，$n_1$为Range-FFT(快时间维度)中目标对应的坐标序列号，$n_2$为Doppler-FFT(慢时间维度)中同一目标对应的坐标序列号，则依照公式(6)可得<br>$$f_{movingBeat} = \frac{n_1}{N_s} \cdot f_s \tag 9$$ $$f_d = \frac{n_2}{N_{Chirp}} \cdot \frac{1}{t_c} \tag {10}$$&emsp;&emsp;其中$N_{Chirp}$为慢时间维度处理中Chirp序列的积累个数；公式(9)类比公式(6)，比较好理解，公式(10)也是类比公式(6)，只不过此时<strong>在慢时间维度上</strong>采样总数是积累的Chirp序列的总数，采样频率是每一个Chirp序列扫频周期的倒数，即$\frac{1}{t_c}$<br>&emsp;&emsp;由此以来，分别联立公式(7)和公式(9)，联立公式(8)和公式(10)，可得<br>$$\frac{2f_cR}{Ct_c} = \frac{n_1}{N_s} \cdot f_s$$ $$\frac{2fv}{C} = \frac{n_2}{N_{Chirp}} \cdot \frac{1}{t_c}$$ &emsp;&emsp;可解得<br>$$R = \frac{C}{2f_C}\cdot t_c\cdot \frac{n_1}{N_s}\cdot f_s \tag{11}$$<br>$$v = \frac{C}{2f} \cdot \frac{n_2}{N_{Chirp}}\cdot \frac{1}{t_c}\tag{12}$$&emsp;&emsp;因为<br>$$t_c = N_s\cdot T_s = \frac{N_s}{f_s} \tag{13}$$ $$t_{seq} = N_{Chirp}\cdot t_c\tag{14}$$&emsp;&emsp;将(13)代入(11)，将(14)代入(12)，可得<br>$$R = \frac{C}{2f_c} \cdot n_1$$$$v = \frac{C}{2ft_{seq}} \cdot n_2$$&emsp;&emsp;此时，就得到了距离分辨率和速度分辨率，分别为<br>$$R_{res} = \frac{C}{2f_c}$$ $$v_{res} = \frac{C}{2fN_{Chirp}t_c} = \frac{C}{2ft_{seq}}$$</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1 id="RDM中距离分辨率和速度分辨率推导方法"><a href="#RDM中距离分辨率和速度分辨率推导方法" class="headerlink" title="RDM中距离分辨率和速度分辨率推导方法"></a>RDM中距离分辨率和速度分辨率推导方法</h1><p>&emsp;&emsp;网上关于RDM方法中距离分辨率和速度分辨率推导的资料实在太少，几乎都是两个长得不太好看公式直接糊你脸上，我的感受就是<del>老人、地铁、看手机.jpg</del>(此处省略表情包)，于是决定记录下推导过程，正所谓难者不会，会者不难。<br>&emsp;&emsp;首先回顾下数字信号处理中第K个采样点的频率$f_k$与采样频率$f_s$间的关系，我们知道，第K个采样点的角频率服从如下关系</p>
+<script type="math/tex; mode=display">\omega_k = \frac{k}{N_s}\cdot2\pi = \Omega\cdot T_s = 2 \pi f_k\cdot \frac{1}{f_s}</script><p>&emsp;&emsp;其中$N_s$为采样点数，$\Omega$为模拟角频率，$T_s$为采样频率，我们取出等式中的第二项和第四项，有</p>
+<script type="math/tex; mode=display">\frac{k}{N_s}\cdot2\pi =2 \pi f_k\cdot \frac{1}{f_s}</script><p>&emsp;&emsp;可得第K个采样点的频率$f_k$与采样频率$f_s$间的关系为</p>
+<script type="math/tex; mode=display">f_k = k\cdot \frac{f_s}{N_s} \tag 6</script><p>&emsp;&emsp;到此就可以正式展开距离分辨率和速度分辨率的推导方法了，上一部分我们说到快时间维度的Range-FFT和慢时间维度的Doppler-FFT，有两个结论性的公式</p>
+<script type="math/tex; mode=display">f_{movingBeat} \approx f_{staticBeat} =  \frac{2f_cR}{Ct_c} \tag 7</script><script type="math/tex; mode=display">f_d = \frac{2fv}{C}  \tag 8</script><p>&emsp;&emsp;假设上一部分中距离多普勒热力图中，$n_1$为Range-FFT(快时间维度)中目标对应的坐标序列号，$n_2$为Doppler-FFT(慢时间维度)中同一目标对应的坐标序列号，则依照公式(6)可得</p>
+<script type="math/tex; mode=display">f_{movingBeat} = \frac{n_1}{N_s} \cdot f_s \tag 9</script><script type="math/tex; mode=display">f_d = \frac{n_2}{N_{Chirp}} \cdot \frac{1}{t_c} \tag {10}</script><p>&emsp;&emsp;其中$N_{Chirp}$为慢时间维度处理中Chirp序列的积累个数；公式(9)类比公式(6)，比较好理解，公式(10)也是类比公式(6)，只不过此时<strong>在慢时间维度上</strong>采样总数是积累的Chirp序列的总数，采样频率是每一个Chirp序列扫频周期的倒数，即$\frac{1}{t_c}$<br>&emsp;&emsp;由此以来，分别联立公式(7)和公式(9)，联立公式(8)和公式(10)，可得</p>
+<script type="math/tex; mode=display">\frac{2f_cR}{Ct_c} = \frac{n_1}{N_s} \cdot f_s</script><script type="math/tex; mode=display">\frac{2fv}{C} = \frac{n_2}{N_{Chirp}} \cdot \frac{1}{t_c}</script><p>&emsp;&emsp;可解得</p>
+<script type="math/tex; mode=display">R = \frac{C}{2f_C}\cdot t_c\cdot \frac{n_1}{N_s}\cdot f_s \tag{11}</script><script type="math/tex; mode=display">v = \frac{C}{2f} \cdot \frac{n_2}{N_{Chirp}}\cdot \frac{1}{t_c}\tag{12}</script><p>&emsp;&emsp;因为 </p>
+<script type="math/tex; mode=display">t_c = N_s\cdot T_s = \frac{N_s}{f_s} \tag{13}</script><script type="math/tex; mode=display">t_{seq} = N_{Chirp}\cdot t_c\tag{14}</script><p>&emsp;&emsp;将(13)代入(11)，将(14)代入(12)，可得</p>
+<script type="math/tex; mode=display">R = \frac{C}{2f_c} \cdot n_1</script><script type="math/tex; mode=display">v = \frac{C}{2ft_{seq}} \cdot n_2</script><p>&emsp;&emsp;此时，就得到了距离分辨率和速度分辨率，分别为</p>
+<script type="math/tex; mode=display">R_{res} = \frac{C}{2f_c}</script><script type="math/tex; mode=display">v_{res} = \frac{C}{2fN_{Chirp}t_c} = \frac{C}{2ft_{seq}}</script><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/31047473" target="_blank" rel="noopener">Automotive radar 信号处理 第2课 速度估计</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/77500626" target="_blank" rel="noopener">Radar测距及测速原理(2)——快速Chirp序列方法推导及实际应用</a></li>
 <li><a href="https://mp.weixin.qq.com/s/3pmABLMsirzEXcIn3a2_Pw" target="_blank" rel="noopener">2D CFAR的原理，其实没那么的神奇</a></li>
@@ -111,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/26/FMCW%E9%9B%B7%E8%BE%BE%E8%B7%9D%E7%A6%BB%E5%A4%9A%E6%99%AE%E5%8B%92-RDM-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%AD%E8%B7%9D%E7%A6%BB%E5%88%86%E8%BE%A8%E7%8E%87%E5%92%8C%E9%80%9F%E5%BA%A6%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E6%8E%A8%E5%AF%BC/" data-id="ck73byhdz000008uo18d19fju" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/26/FMCW%E9%9B%B7%E8%BE%BE%E8%B7%9D%E7%A6%BB%E5%A4%9A%E6%99%AE%E5%8B%92-RDM-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%AD%E8%B7%9D%E7%A6%BB%E5%88%86%E8%BE%A8%E7%8E%87%E5%92%8C%E9%80%9F%E5%BA%A6%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E6%8E%A8%E5%AF%BC/" data-id="ck73dcszn0000gguo0kuh2fub" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,5 +238,21 @@
 
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

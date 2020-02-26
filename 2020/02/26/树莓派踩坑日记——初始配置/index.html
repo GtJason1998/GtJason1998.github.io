@@ -94,8 +94,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure>
 <p>查看分配的ip地址，使用命令连接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@ip_address</span><br></pre></td></tr></table></figure>
-
-
 <h1 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h1><h2 id="wifi配置"><a href="#wifi配置" class="headerlink" title="wifi配置"></a>wifi配置</h2><p>打开<code>wifi</code>，修改wifi配置文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></table></figure>
 <p>改成如下格式</p>
@@ -104,17 +102,15 @@
 <h2 id="raspi-config"><a href="#raspi-config" class="headerlink" title="raspi-config"></a>raspi-config</h2><h3 id="更改密码"><a href="#更改密码" class="headerlink" title="更改密码"></a>更改密码</h3><p>选择第一项，按提示更改密码</p>
 <h3 id="拓展文件系统"><a href="#拓展文件系统" class="headerlink" title="拓展文件系统"></a>拓展文件系统</h3><p>保证你的整张SD卡可以被你的Raspbian系统访问，通过如下命令可以查看区别</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-
 <h3 id="更改分辨率"><a href="#更改分辨率" class="headerlink" title="更改分辨率"></a>更改分辨率</h3><p>一般来说，需要根据你的显示器更改分辨率，视情况而定</p>
 <h2 id="更改镜像源"><a href="#更改镜像源" class="headerlink" title="更改镜像源"></a>更改镜像源</h2><p>修改<code>/etc/apt/sources.list</code>和<code>/etc/apt/sources.list.d/raspi.list</code>文件，更改方法网上搜索很多，更改镜像源，然后执行更新指令即可完成初步配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure>
-
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>千万不要在操作文件系统/使用树莓派GPIO口时断电，可能会造成文件系统损坏，导致之后无法正常进入系统，也就导致不能通过wifi或者网线连接树莓派</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/" data-id="ck73byhee000608uo0oi5526q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/" data-id="ck73dct030006gguo4dwddhpp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,5 +232,21 @@
 
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
