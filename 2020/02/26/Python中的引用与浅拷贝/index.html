@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">825字</span>
+            <span class="post-count">827字</span>
         </span>
     </span>
 
@@ -105,7 +105,7 @@
 <ul>
 <li>变量 ：变量可以看作是一个标签，它无类型，建立后存入系统变量表</li>
 <li>引用 ：引用可以看作是一个特殊的”指针”，它存放着对象的地址</li>
-<li>对象 ：对象是计算机分配的一块实际的内存，里边存放着相应的值<h1 id="3-引用-reference"><a href="#3-引用-reference" class="headerlink" title="3. 引用(reference)"></a>3. 引用(reference)</h1>在Python中，<strong>赋值语句</strong>，总是在 <strong>建立对象的引用</strong>(建立指针) 或是 <strong>修改变量的引用</strong>(修改指针)，通过引用可以查看相应的值在内存中的存放地址，Python中，通过内置函数id()来查看对象的存放地址，如<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">id(list1)	<span class="comment">#该语句可以查看list1列表在内存中的存放地址</span></span><br></pre></td></tr></table></figure>
+<li>对象 ：对象是计算机分配的一块实际的内存，里边存放着相应的值<h1 id="3-引用-reference"><a href="#3-引用-reference" class="headerlink" title="3. 引用(reference)"></a>3. 引用(reference)</h1>在Python中，<strong>赋值语句</strong>，总是在 <strong>建立对象的引用</strong>(建立指针) 或是 <strong>修改变量的引用</strong>(修改指针)，通过引用可以查看相应的值在内存中的存放地址，Python中，通过内置函数id()来查看对象的存放地址，如<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">id(list1)	<span class="comment">#该语句可以查看list1列表在进程空间中的存放地址</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="3-1-可变对象与不可变对象的引用问题"><a href="#3-1-可变对象与不可变对象的引用问题" class="headerlink" title="3.1. 可变对象与不可变对象的引用问题"></a>3.1. 可变对象与不可变对象的引用问题</h2><p>Python中，对象可分为可变对象和不可变对象，首先讨论什么是可变对象，什么是不可变对象</p>

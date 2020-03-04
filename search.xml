@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test</title>
+    <url>/2020/03/04/test/</url>
+    <content><![CDATA[<h1 id="Just-for-test"><a href="#Just-for-test" class="headerlink" title="Just for test"></a>Just for test</h1><a id="more"></a>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Helloworld\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>FMCW雷达距离多普勒(RDM)处理方法中距离分辨率和速度分辨率的推导</title>
     <url>/2020/02/26/FMCW%E9%9B%B7%E8%BE%BE%E8%B7%9D%E7%A6%BB%E5%A4%9A%E6%99%AE%E5%8B%92-RDM-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%AD%E8%B7%9D%E7%A6%BB%E5%88%86%E8%BE%A8%E7%8E%87%E5%92%8C%E9%80%9F%E5%BA%A6%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E6%8E%A8%E5%AF%BC/</url>
     <content><![CDATA[<h1 id="1-距离多普勒-Range-Dopple-Matrix-处理方法"><a href="#1-距离多普勒-Range-Dopple-Matrix-处理方法" class="headerlink" title="1. 距离多普勒(Range-Dopple Matrix)处理方法"></a>1. 距离多普勒(Range-Dopple Matrix)处理方法</h1><p>&emsp;&emsp;众所周知，距离多普勒处理方法(Range-Dopple Matrix，简称RDM)是FMCW雷达进行多目标信息提取的有效手段，通过对雷达发送的多个周期的Chirp序列以及回波信息进行快时间维度和慢时间维度的处理，即可得到距离多普勒热力图，进而可以提取多目标的距离和速度信息。<br><a id="more"></a><br><img src="https://img-blog.csdnimg.cn/20200212132950250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="FMCW Multi-Chirp"><br>&emsp;&emsp;在FMCW的差拍信号中，我们知道，差拍信号的频率为</p>
@@ -99,7 +108,7 @@
 <ul>
 <li>变量 ：变量可以看作是一个标签，它无类型，建立后存入系统变量表</li>
 <li>引用 ：引用可以看作是一个特殊的”指针”，它存放着对象的地址</li>
-<li>对象 ：对象是计算机分配的一块实际的内存，里边存放着相应的值<h1 id="3-引用-reference"><a href="#3-引用-reference" class="headerlink" title="3. 引用(reference)"></a>3. 引用(reference)</h1>在Python中，<strong>赋值语句</strong>，总是在 <strong>建立对象的引用</strong>(建立指针) 或是 <strong>修改变量的引用</strong>(修改指针)，通过引用可以查看相应的值在内存中的存放地址，Python中，通过内置函数id()来查看对象的存放地址，如<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">id(list1)	<span class="comment">#该语句可以查看list1列表在内存中的存放地址</span></span><br></pre></td></tr></table></figure>
+<li>对象 ：对象是计算机分配的一块实际的内存，里边存放着相应的值<h1 id="3-引用-reference"><a href="#3-引用-reference" class="headerlink" title="3. 引用(reference)"></a>3. 引用(reference)</h1>在Python中，<strong>赋值语句</strong>，总是在 <strong>建立对象的引用</strong>(建立指针) 或是 <strong>修改变量的引用</strong>(修改指针)，通过引用可以查看相应的值在内存中的存放地址，Python中，通过内置函数id()来查看对象的存放地址，如<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">id(list1)	<span class="comment">#该语句可以查看list1列表在进程空间中的存放地址</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="3-1-可变对象与不可变对象的引用问题"><a href="#3-1-可变对象与不可变对象的引用问题" class="headerlink" title="3.1. 可变对象与不可变对象的引用问题"></a>3.1. 可变对象与不可变对象的引用问题</h2><p>Python中，对象可分为可变对象和不可变对象，首先讨论什么是可变对象，什么是不可变对象</p>
