@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">970字</span>
+            <span class="post-count">992字</span>
         </span>
     </span>
 
@@ -137,7 +137,7 @@ S^H\cdot N=0</script>即信号子空间$U_s$与噪声子空间$U_n$正交</li>
 <ul>
 <li>阵列导向向量$A(\theta)$是由信号子空间张成的基向量组成的</li>
 <li>因为<script type="math/tex; mode=display">
-S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅当$\theta_i$为信源方向时，分母中的$A(\theta_i)$可由信号子空间张成的基向量线性表示，同时由于$P_N$可由噪声子空间线性表示，利用信号子空间和噪声子空间的正交性，所以此时分母的理论计算值为0，故$S_{music}$计算结果趋于$+\infty$，此时对$music$谱($S_{music}-\theta$)进行谱峰搜索即可搜寻出目标的位置</li>
+S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅当$\theta_i$为信源方向时，分母中的$A(\theta_i)$可由信号子空间张成的基向量线性表示，同时由于$P_N$可由噪声子空间线性表示，利用信号子空间和噪声子空间的正交性，所以此时分母的理论计算值为0，但由于噪声的存在，此时分母为一个很小的值，故$S_{music}(\theta_i)$计算结果为一尖峰值，此时对$music$谱($S_{music}-\theta$)进行谱峰搜索即可搜寻出目标的位置</li>
 </ul>
 
       
