@@ -3,8 +3,8 @@
   <entry>
     <title>信号矩阵理论学习笔记</title>
     <url>/2020/03/09/%E4%BF%A1%E5%8F%B7%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="信号矩阵理论学习笔记"><a href="#信号矩阵理论学习笔记" class="headerlink" title="信号矩阵理论学习笔记"></a>信号矩阵理论学习笔记</h1><a id="more"></a>
-<h2 id="线性代数知识补充"><a href="#线性代数知识补充" class="headerlink" title="线性代数知识补充"></a>线性代数知识补充</h2><ul>
+    <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
+<h1 id="1-线性代数知识补充"><a href="#1-线性代数知识补充" class="headerlink" title="1. 线性代数知识补充"></a>1. 线性代数知识补充</h1><ul>
 <li>$rank(AB) = min\{rank(A),rank(B)\}$</li>
 <li>$(A^{-1})^T=(A^T)^{-1}$</li>
 <li>$Tr(AB) = Tr(BA)$</li>
@@ -16,7 +16,7 @@
 <li>矩阵可逆 $&lt;=&gt;$ 矩阵行列式不等于0 $&lt;=&gt;$ 矩阵满秩</li>
 <li>矩阵特征值的个数等于其阶数，非零特征值的个数等于矩阵的秩 <br><br>$Q^{-1}RQ=\Lambda$，因为$Q$矩阵可逆，所以$Q$矩阵满秩，所以<br>$rank(Q^{-1}RQ) = min\{rank(Q^{-1},rank(R),rank(Q)\}= rank(R)= rank(\Lambda)$<br><br> 根据等式后两项，有矩阵的秩等于非零特征值的个数</li>
 </ul>
-<h2 id="输入信号相关矩阵"><a href="#输入信号相关矩阵" class="headerlink" title="输入信号相关矩阵"></a>输入信号相关矩阵</h2><ul>
+<h1 id="2-输入信号相关矩阵"><a href="#2-输入信号相关矩阵" class="headerlink" title="2. 输入信号相关矩阵"></a>2. 输入信号相关矩阵</h1><ul>
 <li>$R = E[X^*X^T]$ 其中$R$为$Hermite$阵，即$R^H = R$</li>
 <li><p>$\omega^H R \omega$ &nbsp;$&lt;=&gt;$ &nbsp;输出信号功率 <br><br>因为自适应组合器信号输出(见课本公式(2.3))</p>
 <script type="math/tex; mode=display">y(t)=q_n^TX = X^Tq_n</script><p>&emsp;&emsp;所以输出功率</p>
@@ -32,7 +32,7 @@ R = \sum\lambda_iq_iq_i^H</script><p>&emsp;其中$\lambda_i$为信号相关矩�
 <script type="math/tex; mode=display">R = Q\Lambda Q^H = Q\Lambda Q^{-1} \tag{3}</script></li>
 <li>矩阵$R$的特征值之和为输入信号的功率 <br><br>因为$Tr(\Lambda) = Tr(R) = E[x_0^*x_0] + E[x_1^*x_1] + \cdots + E[x_L^*x_L]$(证明见课件)，其中等号最后一项即为各通道的输入功率之和</li>
 </ul>
-<h2 id="信号子空间和噪声子空间"><a href="#信号子空间和噪声子空间" class="headerlink" title="信号子空间和噪声子空间"></a>信号子空间和噪声子空间</h2><ul>
+<h1 id="3-信号子空间和噪声子空间"><a href="#3-信号子空间和噪声子空间" class="headerlink" title="3. 信号子空间和噪声子空间"></a>3. 信号子空间和噪声子空间</h1><ul>
 <li><p>信号子空间$U_s$与噪声子空间$U_n$正交 <br></p>
 <script type="math/tex; mode=display">U_s \overset{\Delta}{=} span[q_0,q_1,\cdots,q_{r-1}]</script><script type="math/tex; mode=display">U_n \overset{\Delta}{=} span[q_r,q_{r+1},\cdots,q_{L}]</script><script type="math/tex; mode=display">
 \begin{bmatrix} K_1U_s & 0 \\ 0 & 0 \end{bmatrix} \cdot \begin{bmatrix} 0 & 0 \\ 0 & K_2U_n \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}</script></li>
