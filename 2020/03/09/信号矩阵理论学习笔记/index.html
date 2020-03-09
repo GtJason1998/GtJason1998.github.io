@@ -127,7 +127,7 @@ q_n^HRq_n=\lambda_nq_n^Hq_n</script><p>&emsp;&emsp;由于$q_n^Hq_n$为非零特�
 R = \sum\lambda_iq_iq_i^H</script><p>&emsp;其中$\lambda_i$为信号相关矩阵的特征值，$q_i$为特征值$\lambda_i$对应的特征向量 <br><br>&emsp;因为<u><strong>特征向量矩阵$Q$内的所有特征向量是相互正交并各自归一化的，且不同特征值对应的特征向量相互正交</strong></u>(证明过程见课件)，即$Q$矩阵与$Q$矩阵自己的内积中非对角元素均为0，所以有$Q^HQ = I$,$I$为单位矩阵,所以有</p>
 <script type="math/tex; mode=display">Q^{-1} = Q^H \tag{2}</script><p>&emsp;等式(2)和等式(1)联合，有</p>
 <script type="math/tex; mode=display">R = Q\Lambda Q^H = Q\Lambda Q^{-1} \tag{3}</script></li>
-<li>矩阵$R$的特征值之和为输入信号的功率 <br><br>因为$Tr(\Lambda) = Tr(R) = E[x_0^<em>x_0] + E[x_1^</em>x_1] + \cdots + E[x_L^*x_L]$(证明见课件)，其中等号最后一项即为各通道的输入功率之和</li>
+<li>矩阵$R$的特征值之和为输入信号的功率 <br><br>因为$Tr(\Lambda) = Tr(R) = E[x_0^*x_0] + E[x_1^*x_1] + \cdots + E[x_L^*x_L]$(证明见课件)，其中等号最后一项即为各通道的输入功率之和</li>
 </ul>
 <h2 id="信号子空间和噪声子空间"><a href="#信号子空间和噪声子空间" class="headerlink" title="信号子空间和噪声子空间"></a>信号子空间和噪声子空间</h2><ul>
 <li><p>信号子空间$U_s$与噪声子空间$U_n$正交 <br></p>
