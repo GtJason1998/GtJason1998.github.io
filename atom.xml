@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-07T07:35:13.957Z</updated>
+  <updated>2020-03-09T07:50:30.644Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>信号矩阵理论学习笔记</title>
+    <link href="http://yoursite.com/2020/03/09/%E4%BF%A1%E5%8F%B7%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/03/09/%E4%BF%A1%E5%8F%B7%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-03-09T07:43:50.000Z</published>
+    <updated>2020-03-09T07:50:30.644Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;信号矩阵理论学习笔记&quot;&gt;&lt;a href=&quot;#信号矩阵理论学习笔记&quot; class=&quot;headerlink&quot; title=&quot;信号矩阵理论学习笔记&quot;&gt;&lt;/a&gt;信号矩阵理论学习笔记&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="Adaptive Signal Process" scheme="http://yoursite.com/categories/Adaptive-Signal-Process/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>FMCW雷达距离多普勒(RDM)处理方法中距离分辨率和速度分辨率的推导</title>
