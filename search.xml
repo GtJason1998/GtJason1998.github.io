@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>阵列信号模型</title>
+    <url>/2020/03/11/%E9%98%B5%E5%88%97%E4%BF%A1%E5%8F%B7%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>被阵列信号模型中的矩阵搞得晕头转向，矩阵中又嵌套向量，记录一下 <br><br><a id="more"></a><br>常见的阵列模型如下：<br><img src="https://gitee.com/gtjason1998/article_images/raw/master/article_images1.png" alt="阵列模型"></p>
+<ul>
+<li>$X$为全部阵元总的输出，$X = [X_1(t),X_2(t),\cdots,X_M(t)]^T$</li>
+<li>$N(t)$为噪声，$N(t) = [n_1(t),n_2(t),\cdots,n_M(t)]^T$ </li>
+<li>$A$为阵列导向向量构成的矩阵，$A = [A(\theta_1),A(\theta_2),\cdots,A(\theta_k)]$<ul>
+<li>$A(\theta_i) = [1,e^{-j\frac{2\pi d}{\lambda}sin\theta_i},\cdots,e^{-j\frac{2\pi (M-1)d}{\lambda}sin\theta_i}]^T$</li>
+</ul>
+</li>
+<li>$S(t)$为入射信号，$S(t) = [ S_1(t),S_2(t),\cdots,S_k(t)]^T$<ul>
+<li>$S_i(t)=[S_{i1},S_{i2},\cdots,S_{im}]^T$<script type="math/tex; mode=display">
+X = \underbrace{\underbrace{A}_{M\times k}\underbrace{S(t)}_{k\times m} + \underbrace{N(t)}_{M\times m}}_{M\times m} = \underbrace{\sum_{i=1}^{k}\underbrace{A(\theta_i)}_{M\times 1}\cdot \underbrace{S_i^T(t)}_{1\times m} + \underbrace{N(t)}_{M\times m}}_{M\times m}</script></li>
+</ul>
+</li>
+<li>阵列导向矩阵$A$大小为$M\times k$，其中$M$表示阵元的个数(通道的个数)，$k$表示目标的数目(信源的数目)，$A(\theta_i)$大小为$M\times 1$，表示同一个信源在$M$个不同阵元(通道)下的相移</li>
+<li>入射信号矩阵$S(t)$大小为$k\times m$，$k$表示目标的数目(信源的数目)，$m$表示$m$次采样，即快拍数为$m$，$S_i^T(t)$大小为$1\times m$，表示对同一个信源采样$m$次</li>
+<li>$N(t)$为噪声矩阵，大小为$M\times m$，表示$M$个阵元(通道)在$m$次采样情况下形成的噪声矩阵</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Adaptive Signal Processing</category>
+      </categories>
+  </entry>
+  <entry>
     <title>信号矩阵理论学习笔记</title>
     <url>/2020/03/09/%E4%BF%A1%E5%8F%B7%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
