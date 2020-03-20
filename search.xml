@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>线性空间笔记</title>
+    <url>/2020/03/20/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
+<h1 id="线性代数知识补充"><a href="#线性代数知识补充" class="headerlink" title="线性代数知识补充"></a>线性代数知识补充</h1><ul>
+<li>齐次线性方程组以及非齐次线性方程组知识补充<ul>
+<li><a href="https://blog.csdn.net/xiaotang_sama/article/details/101515550?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158467969019726867822320%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&amp;request_id=158467969019726867822320&amp;biz_id=0&amp;utm_source=distribute.pc_search_result.none-task" target="_blank" rel="noopener">线性代数05 齐次/非齐次线性方程组的具体解集</a></li>
+<li><a href="https://blog.csdn.net/wwang196988/article/details/6766234" target="_blank" rel="noopener">求解非齐次线性方程组算法</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="线性空间笔记"><a href="#线性空间笔记" class="headerlink" title="线性空间笔记"></a>线性空间笔记</h1><ul>
+<li>线性空间的证明，需证明<strong>唯一性</strong>和<strong>封闭性</strong>，以及<strong>八条性质</strong>(加法四条、乘法四条)</li>
+<li>线性空间总是相对数域而言的，相关证明记得关注数域</li>
+<li>线性空间的维数与基的求解问题：<ul>
+<li>欲求线性空间的基，需先求出该线性空间$V$的线性无关组，再证明该线性无关组元素个数最大即可 $&lt;=&gt;$ 即对于$\forall A\in V$，$A$均可由该线性无关组线性表示</li>
+<li>线性空间$V$中最大线性无关组所含元素的个数称为$V$的维数，记作$dimV$，也即为基中所含元素的个数</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Matrix Theory</category>
+      </categories>
+  </entry>
+  <entry>
     <title>阵列信号模型</title>
     <url>/2020/03/11/%E9%98%B5%E5%88%97%E4%BF%A1%E5%8F%B7%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<p>被阵列信号模型中的矩阵搞得晕头转向，矩阵中又嵌套向量，记录一下 <br><br><a id="more"></a><br>常见的阵列模型如下：<br><img src="https://gitee.com/gtjason1998/article_images/raw/master/article_images1.png" alt="阵列模型"></p>
