@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">992字</span>
+            <span class="post-count">984字</span>
         </span>
     </span>
 
@@ -116,10 +116,10 @@
 <h1 id="2-输入信号相关矩阵"><a href="#2-输入信号相关矩阵" class="headerlink" title="2. 输入信号相关矩阵"></a>2. 输入信号相关矩阵</h1><ul>
 <li>$R = E[X^*X^T]$ 其中$R$为$Hermite$阵，即$R^H = R$</li>
 <li><p>$\omega^H R \omega$ &nbsp;$&lt;=&gt;$ &nbsp;输出信号功率 <br><br>因为自适应组合器信号输出(见课本公式(2.3))</p>
-<script type="math/tex; mode=display">y(t)=q_n^TX = X^Tq_n</script><p>&emsp;&emsp;所以输出功率</p>
-<script type="math/tex; mode=display">E[|y(t)|^2]=E[y^*(t)y(t)]=E[q_n^HX^*X^Tq_n] = q_n^HE[X^*X^T]q_n=q_n^HRq_n</script><p>&emsp;&emsp;其中$\omega$为信号线性组合器模型中的权向量，$R$为信号相关矩阵 <br><br>&emsp;&emsp;因为输出功率恒大于等于0且为实数，同时由于$Rq_n=\lambda_nq_n$，两边同乘$q_n^H$有</p>
+<script type="math/tex; mode=display">y(t)=q_n^TX = X^Tq_n</script><p>所以输出功率</p>
+<script type="math/tex; mode=display">E[|y(t)|^2]=E[y^*(t)y(t)]=E[q_n^HX^*X^Tq_n] = q_n^HE[X^*X^T]q_n=q_n^HRq_n</script><p>其中$\omega$为信号线性组合器模型中的权向量，$R$为信号相关矩阵 <br><br>因为输出功率恒大于等于0且为实数，同时由于$Rq_n=\lambda_nq_n$，两边同乘$q_n^H$有</p>
 <script type="math/tex; mode=display">
-q_n^HRq_n=\lambda_nq_n^Hq_n</script><p>&emsp;&emsp;由于$q_n^Hq_n$为非零特征向量的内积，故$q_n^Hq_n$恒大于0，所以$\lambda_n$均为大于或等于0的正实数，即$\lambda_n \geq 0$，所以信号相关矩阵$R$为正定或半正定矩阵，详见<a href="https://baike.baidu.com/item/正定矩阵/11030459?fr=aladdin" target="_blank" rel="noopener">正定矩阵充要条件第4条</a></p>
+q_n^HRq_n=\lambda_nq_n^Hq_n</script><p>由于$q_n^Hq_n$为非零特征向量的内积，故$q_n^Hq_n$恒大于0，所以$\lambda_n$均为大于或等于0的正实数，即$\lambda_n \geq 0$，所以信号相关矩阵$R$为正定或半正定矩阵，详见<a href="https://baike.baidu.com/item/正定矩阵/11030459?fr=aladdin" target="_blank" rel="noopener">正定矩阵充要条件第4条</a></p>
 </li>
 <li><p>$R$可分解为(证明见课件)</p>
 <script type="math/tex; mode=display">R=Q\Lambda Q^H \tag{1}</script><p>将等式(1)拆解开，还可表示为</p>
