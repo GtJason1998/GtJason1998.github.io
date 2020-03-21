@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>性能测量方法学习笔记</title>
+    <url>/2020/03/21/%E6%80%A7%E8%83%BD%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>性能测量方法本节主要讲四个代价函数</strong><br><a id="more"></a></p>
+<h2 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h2><ul>
+<li>$(R^{-1})^H = (R^H)^{-1}$</li>
+</ul>
+<h2 id="最小均方误差-MMSE"><a href="#最小均方误差-MMSE" class="headerlink" title="最小均方误差(MMSE)"></a>最小均方误差(MMSE)</h2><ul>
+<li>参考信号$d_k$需与输入信号$x_k$间存在相关分量，否则，当$d_k$中与$x_k$中不存在相关份量时<script type="math/tex; mode=display">
+E(|\varepsilon_k|^2) = E[(d_k - y_k)^*(d_k - y_k)] = E(|d_k|^2) + W^HRW</script>即参考向量和输入信号构成的互相关向量$P = E[d^*X] = 0$，此时为使$E(|\varepsilon_k|^2)$最小，权向量$W$应为零向量，此时自适应系统没有意义，不$work$</li>
+</ul>
+<h2 id="最大信噪比-MSN"><a href="#最大信噪比-MSN" class="headerlink" title="最大信噪比(MSN)"></a>最大信噪比(MSN)</h2><ul>
+<li>需要注意的几个公式</li>
+</ul>
+<script type="math/tex; mode=display">S^{'}_k = AS_k</script><script type="math/tex; mode=display">N_k^{'} = AN_k</script><script type="math/tex; mode=display">W = A^TW^{'}</script><ul>
+<li>应用条件是需已知$R_N$和$R_S$，即可以构建式子</li>
+</ul>
+<script type="math/tex; mode=display">
+R_n^{-1}R_SW_{opt} = \lambda_{max}^{’}W_{opt}</script><p>从而可以求出最佳权向量$W_{opt}$</p>
+<h2 id="最大似然-ML"><a href="#最大似然-ML" class="headerlink" title="最大似然(ML)"></a>最大似然(ML)</h2><ul>
+<li>相干源 $&lt;=&gt;$ 统计相关</li>
+<li>非相干源 $&lt;=&gt;$ 统计独立</li>
+</ul>
+<h2 id="最小方差-MV"><a href="#最小方差-MV" class="headerlink" title="最小方差(MV)"></a>最小方差(MV)</h2><ul>
+<li><p>宽带模型与窄带模型</p>
+<ul>
+<li>孔径渡越时间$\tau$，脉冲压缩后信号的脉压宽度$T$，若<script type="math/tex; mode=display">
+\tau \ll T \approx \frac{1}{B}</script>则为窄带模型，孔径渡越时间几乎可忽略</li>
+<li>若$\tau$与$T$数量悬殊不大，则为宽带模型，可使用延时线对信号包络进行补偿</li>
+</ul>
+</li>
+<li><p>利用拉格朗日乘子法将约束条件$W^T$<strong>$1$</strong>$= 1$和最小输出噪声方差的目标函数$W^HR_n^{‘}W$一起转化为了一个最小噪声方差性能函数，不过从几何上理解拉格朗日乘子法还是存在一定的困难。。。。</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/38586401" target="_blank" rel="noopener">如何理解拉格朗日乘子法？</a></li>
+</ul>
+</li>
+<li><p>最小方差准则是在一定的约束条件下，接收信号</p>
+<script type="math/tex; mode=display">
+y_k = W^TA(\theta)S(t) + W^TN(t)</script><p>被约束为</p>
+<script type="math/tex; mode=display">
+y_k = S(t) + W^TN(t)</script><p>即此时有$W^TA(\theta) = 1$，也即约束条件为$W^TA(\theta) = 1$，此时</p>
+<script type="math/tex; mode=display">
+var(y_k) = E[S(t)^*S(t)^T] + W^HR_nW</script><p>此时调整权值使得方差(即输出功率)最小，即得到了最优权$W_{opt}$，接收信号功率没法控制，等于是控制输出噪声功率最小，即总输出信号有最大的信噪比，也就是所谓的最小(噪声)方差准则</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Adaptive Signal Processing</category>
+      </categories>
+  </entry>
+  <entry>
     <title>线性空间笔记</title>
     <url>/2020/03/20/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>

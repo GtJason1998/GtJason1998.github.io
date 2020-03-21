@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-20T08:20:35.457Z</updated>
+  <updated>2020-03-21T14:51:11.683Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>性能测量方法学习笔记</title>
+    <link href="http://yoursite.com/2020/03/21/%E6%80%A7%E8%83%BD%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/03/21/%E6%80%A7%E8%83%BD%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-03-21T14:40:46.000Z</published>
+    <updated>2020-03-21T14:51:11.683Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;性能测量方法本节主要讲四个代价函数&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Adaptive Signal Processing" scheme="http://yoursite.com/categories/Adaptive-Signal-Processing/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>线性空间笔记</title>
