@@ -105,7 +105,7 @@
 <li>$(R^{-1})^H = (R^H)^{-1}$</li>
 </ul>
 <h2 id="最小均方误差-MMSE"><a href="#最小均方误差-MMSE" class="headerlink" title="最小均方误差(MMSE)"></a>最小均方误差(MMSE)</h2><ul>
-<li>参考信号$d_k$需与输入信号$x_k$间存在相关分量，否则，当$d_k$中与$x_k$中不存在相关份量时<script type="math/tex; mode=display">
+<li>参考信号$d_k$需与输入信号$x_k$间存在相关分量，否则，当$d_k$中与$x_k$中不存在相关分量时<script type="math/tex; mode=display">
 E(|\varepsilon_k|^2) = E[(d_k - y_k)^*(d_k - y_k)] = E(|d_k|^2) + W^HRW</script>即参考向量和输入信号构成的互相关向量$P = E[d^*X] = 0$，此时为使$E(|\varepsilon_k|^2)$最小，权向量$W$应为零向量，此时自适应系统没有意义，不$work$</li>
 </ul>
 <h2 id="最大信噪比-MSN"><a href="#最大信噪比-MSN" class="headerlink" title="最大信噪比(MSN)"></a>最大信噪比(MSN)</h2><ul>
