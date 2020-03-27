@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Python中的引用与浅拷贝 |  GtJason1998
+    Matplotlib绘图中文无法显示 |  GtJason1998
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -32,7 +32,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-Python中的引用与浅拷贝" class="article article-type-post" itemscope
+  <article id="post-Matplotlib绘图中文无法显示" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +40,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Python中的引用与浅拷贝
+  Matplotlib绘图中文无法显示
 </h1>
   
 
@@ -49,8 +49,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/02/26/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="article-date">
-  <time datetime="2020-02-26T07:48:57.000Z" itemprop="datePublished">2020-02-26</time>
+      <a href="/2019/10/23/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" class="article-date">
+  <time datetime="2019-10-23T07:53:58.000Z" itemprop="datePublished">2019-10-23</time>
 </a>
       
   <div class="article-category">
@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">827字</span>
+            <span class="post-count">164字</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
+            <span class="post-count">1分钟</span>
         </span>
     </span>
 </div>
@@ -100,30 +100,14 @@
       
 
       
-      <h1 id="1-导语"><a href="#1-导语" class="headerlink" title="1. 导语"></a>1. 导语</h1><p>挺绕的知识点，自己边看别人的博客边整理自己遇到的问题，磕磕绊绊写下这篇博客<br><a id="more"></a></p>
-<h1 id="2-浅谈变量、对象及引用间的关系"><a href="#2-浅谈变量、对象及引用间的关系" class="headerlink" title="2. 浅谈变量、对象及引用间的关系"></a>2. 浅谈变量、对象及引用间的关系</h1><p><img src="https://img-blog.csdnimg.cn/20191023110947950.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="变量、对象及引用间的关系"></p>
-<ul>
-<li>变量 ：变量可以看作是一个标签，它无类型，建立后存入系统变量表</li>
-<li>引用 ：引用可以看作是一个特殊的”指针”，它存放着对象的地址</li>
-<li>对象 ：对象是计算机分配的一块实际的内存，里边存放着相应的值<h1 id="3-引用-reference"><a href="#3-引用-reference" class="headerlink" title="3. 引用(reference)"></a>3. 引用(reference)</h1>在Python中，<strong>赋值语句</strong>，总是在 <strong>建立对象的引用</strong>(建立指针) 或是 <strong>修改变量的引用</strong>(修改指针)，通过引用可以查看相应的值在内存中的存放地址，Python中，通过内置函数id()来查看对象的存放地址，如<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">id(list1)	<span class="comment">#该语句可以查看list1列表在进程空间中的存放地址</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-1-可变对象与不可变对象的引用问题"><a href="#3-1-可变对象与不可变对象的引用问题" class="headerlink" title="3.1. 可变对象与不可变对象的引用问题"></a>3.1. 可变对象与不可变对象的引用问题</h2><p>Python中，对象可分为可变对象和不可变对象，首先讨论什么是可变对象，什么是不可变对象</p>
-<ul>
-<li>可变对象 ：如list、set、dict<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>]	<span class="comment">#可变对象，赋值语句在此处是在建立对象的引用</span></span><br><span class="line">list2 = list1			</span><br><span class="line">print(id(list1),id(list2))</span><br><span class="line">list1[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">print(list2)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20191023160728248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="可变对象"><br>list1与list2指向同一块内存，通过修改list1，可以发现list2也受到了影响</p>
-<ul>
-<li>不可变对象 ：如str、number、tuple</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'123'</span>	<span class="comment">#不可变对象，赋值语句在此处是在建立对象的引用</span></span><br><span class="line">print(id(str1))</span><br><span class="line">str1 = <span class="string">'012'</span>	<span class="comment">#创建新对象，并修改该变量的引用</span></span><br><span class="line">print(id(str1))</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191023161006193.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="不可变对象"><br>此处的赋值语句，是在先创建了一个新的str对象的基础上，在修改变量str1的引用</p>
-<h1 id="4-浅拷贝-shallow-copy"><a href="#4-浅拷贝-shallow-copy" class="headerlink" title="4. 浅拷贝(shallow copy)"></a>4. 浅拷贝(shallow copy)</h1><p>在使用NumPy的ndarray对象时，可使用该对象的copy()方法实现浅拷贝(shallow copy)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">array = np.arange(<span class="number">5</span>)</span><br><span class="line">array_illusion = array</span><br><span class="line">array_copy = array.copy()</span><br><span class="line">print(id(array),id(array_illusion),id(array_copy))</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191023162826950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="浅拷贝"><br>根据输出的内存地址可以得知，未使用copy()方法的赋值语句，只是给第1行建立的ndarray对象又建立了一个新的引用，并贴上array_illusion的“标签”，而使用copy()方法则是真正的建立了一个新的ndarray对象</p>
-<h1 id="5-后记"><a href="#5-后记" class="headerlink" title="5. 后记"></a>5. 后记</h1><p>最近在完成学校的数值计算作业的时候，将Matlab的程序转为了Python的程序来实现，由于里边每一次的迭代都需要重新赋值，自己在编写的时候又忽略了Python赋值语句本质上是在操控引用，不像Matlab那样只需要空间预分配就行，进而导致怎么都算不出正确结果，查阅资料补了补知识，在Python赋值语句的后边加上了.copy()，便得到了正确的结果，所以决定写下这篇博客，作为一个学习笔记。本来还想一起把深拷贝的内容也写了，但考虑到自己掌握的也不是太好，同时也不在这篇文章的讨论范围内，就索性等有时间再写了&gt;_&lt;</p>
-<h2 id="5-1-参考文章"><a href="#5-1-参考文章" class="headerlink" title="5.1. 参考文章"></a>5.1. 参考文章</h2><p><a href="https://blog.csdn.net/qq_40911298/article/details/100060756" target="_blank" rel="noopener">Python 赋值引用、浅拷贝、深拷贝详细解析</a><br><a href="https://my.oschina.net/leejun2005/blog/145911" target="_blank" rel="noopener">python基础（5）：深入理解 python 中的赋值、引用、拷贝、作用域</a><br><a href="https://blog.csdn.net/Invokar/article/details/89138684" target="_blank" rel="noopener">Python变量引用浅析</a></p>
+      <h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><a id="more"></a>
+<p>在使用Matplotlib绘图过程中，中文无法显示，如下</p>
+<p><img src="https://img-blog.csdnimg.cn/20191023165735108.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文无法显示"><br>只需要在程序中添加以下代码即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> mpl</span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>] <span class="comment"># 指定默认字体</span></span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20191023170033174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文正常显示"><br><strong>但若是使用的Linux系统</strong>,比如我使用的是deepin，则需要先去网上下载SimHei.ttf的字体文件，拷贝至以下目录下(user处应为对应用户名，具体情况具体分析)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/.<span class="built_in">local</span>/lib/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf</span><br></pre></td></tr></table></figure>
+<p>然后再删除掉以下这个名为matplotlib的目录即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/.cache/matplotlib</span><br></pre></td></tr></table></figure>
 
       
       <!-- reward -->
@@ -145,19 +129,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/02/26/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" class="article-nav-link">
+      <a href="/2019/10/23/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Matplotlib绘图中文无法显示
+            Linux中的echo命令做文本写入及文本追加
           
         </div>
       </a>
     
     
-      <a href="/2020/02/26/Linux%E4%B8%AD%E7%9A%84Bash%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%8F%8A%E9%83%A8%E5%88%86%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" class="article-nav-link">
+      <a href="/2019/10/23/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Linux中的Bash操作符&amp;,&amp;&amp;,|,||及部分基本指令</div>
+        <div class="article-nav-title">Python中的引用与浅拷贝</div>
       </a>
     
   </nav>

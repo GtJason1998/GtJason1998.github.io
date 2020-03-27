@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Matplotlib绘图中文无法显示 |  GtJason1998
+    Archives: 2019 |  GtJason1998
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -32,182 +32,161 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-Matplotlib绘图中文无法显示" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
+  <article class="articles">
     
-    <header class="article-header">
+    
+    <h1 class="page-type-title">2019</h1>
+    
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2019" class="archive-year">2019</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/12/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  <time datetime="2019-12-06T07:56:34.000Z" itemprop="datePublished">12/06</time>
+</a>
        
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Matplotlib绘图中文无法显示
-</h1>
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/12/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/"
+    >树莓派踩坑日记——初始配置</a
+  >
+</h2>
   
 
     </header>
     
-
     
-    <div class="article-meta">
-      <a href="/2020/02/26/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" class="article-date">
-  <time datetime="2020-02-26T07:53:58.000Z" itemprop="datePublished">2020-02-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
   </div>
-
-      
-      
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">164字</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
-        </span>
-    </span>
-</div>
-
-      
-    </div>
-    
-
-    
-    
-    <div class="tocbot"></div>
-
-
-
-
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><a id="more"></a>
-<p>在使用Matplotlib绘图过程中，中文无法显示，如下</p>
-<p><img src="https://img-blog.csdnimg.cn/20191023165735108.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文无法显示"><br>只需要在程序中添加以下代码即可</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> mpl</span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>] <span class="comment"># 指定默认字体</span></span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191023170033174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文正常显示"><br><strong>但若是使用的Linux系统</strong>,比如我使用的是deepin，则需要先去网上下载SimHei.ttf的字体文件，拷贝至以下目录下(user处应为对应用户名，具体情况具体分析)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/.<span class="built_in">local</span>/lib/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf</span><br></pre></td></tr></table></figure>
-<p>然后再删除掉以下这个名为matplotlib的目录即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/.cache/matplotlib</span><br></pre></td></tr></table></figure>
-
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-
-    </footer>
-
-  </div>
-
-  
-  
-  <nav class="article-nav">
-    
-      <a href="/2020/02/26/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Linux中的echo命令做文本写入及文本追加
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2020/02/26/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python中的引用与浅拷贝</div>
-      </a>
-    
-  </nav>
-
-
-  
-
-  
-  
-<!-- valine评论 -->
-<div id="vcomments-box">
-    <div id="vcomments">
-    </div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        app_id: '',
-        app_key: '',
-        path: window.location.pathname,
-        notify: 'false',
-        verify: 'false',
-        avatar: 'mp',
-        placeholder: '给我的文章加点评论吧~',
-        recordIP: true
-    });
-    const infoEle = document.querySelector('#vcomments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-        infoEle.childNodes.forEach(function (item) {
-            item.parentNode.removeChild(item);
-        });
-    }
-</script>
-<style>
-    #vcomments-box {
-        padding: 5px 30px;
-    }
-
-    @media screen and (max-width: 800px) {
-        #vcomments-box {
-            padding: 5px 0px;
-        }
-    }
-
-    #vcomments-box #vcomments {
-        background-color: #fff;
-    }
-
-    .v .vlist .vcard .vh {
-        padding-right: 20px;
-    }
-
-    .v .vlist .vcard {
-        padding-left: 10px;
-    }
-</style>
-
-  
-
-  
-  
-  
-
 </article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/10/23/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/" class="archive-article-date">
+  <time datetime="2019-10-23T07:55:47.000Z" itemprop="datePublished">10/23</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/10/23/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/"
+    >Linux中的echo命令做文本写入及文本追加</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+  </div>
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/10/23/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" class="archive-article-date">
+  <time datetime="2019-10-23T07:53:58.000Z" itemprop="datePublished">10/23</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/10/23/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/"
+    >Matplotlib绘图中文无法显示</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+  </div>
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/10/23/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="archive-article-date">
+  <time datetime="2019-10-23T07:48:57.000Z" itemprop="datePublished">10/23</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/10/23/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/"
+    >Python中的引用与浅拷贝</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+  </div>
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/10/03/Linux%E4%B8%AD%E7%9A%84Bash%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%8F%8A%E9%83%A8%E5%88%86%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" class="archive-article-date">
+  <time datetime="2019-10-03T07:43:38.000Z" itemprop="datePublished">10/03</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/10/03/Linux%E4%B8%AD%E7%9A%84Bash%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%8F%8A%E9%83%A8%E5%88%86%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/"
+    >Linux中的Bash操作符&amp;,&amp;&amp;,|,||及部分基本指令</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+  </div>
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/10/02/hello-world/" class="archive-article-date">
+  <time datetime="2019-10-02T07:48:57.000Z" itemprop="datePublished">10/02</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2019/10/02/hello-world/"
+    >Hello World</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+  </div>
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
+
+  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -354,30 +333,6 @@
 </script>
 
 
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer:'main',
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto',
-    onClick: (e) => {
-      $('.toc-link').removeClass('is-active-link');
-      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
-      $(e.target.hash).scrollIntoView();
-      return false;
-    }
-  });
-</script>
 
 
 <script>

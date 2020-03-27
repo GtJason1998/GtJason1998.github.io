@@ -149,7 +149,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>FMCW雷达距离多普勒(RDM)处理方法中距离分辨率和速度分辨率的推导</title>
-    <url>/2020/02/26/FMCW%E9%9B%B7%E8%BE%BE%E8%B7%9D%E7%A6%BB%E5%A4%9A%E6%99%AE%E5%8B%92-RDM-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%AD%E8%B7%9D%E7%A6%BB%E5%88%86%E8%BE%A8%E7%8E%87%E5%92%8C%E9%80%9F%E5%BA%A6%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E6%8E%A8%E5%AF%BC/</url>
+    <url>/2020/02/12/FMCW%E9%9B%B7%E8%BE%BE%E8%B7%9D%E7%A6%BB%E5%A4%9A%E6%99%AE%E5%8B%92-RDM-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%AD%E8%B7%9D%E7%A6%BB%E5%88%86%E8%BE%A8%E7%8E%87%E5%92%8C%E9%80%9F%E5%BA%A6%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E6%8E%A8%E5%AF%BC/</url>
     <content><![CDATA[<h1 id="1-距离多普勒-Range-Dopple-Matrix-处理方法"><a href="#1-距离多普勒-Range-Dopple-Matrix-处理方法" class="headerlink" title="1. 距离多普勒(Range-Dopple Matrix)处理方法"></a>1. 距离多普勒(Range-Dopple Matrix)处理方法</h1><p>&emsp;&emsp;众所周知，距离多普勒处理方法(Range-Dopple Matrix，简称RDM)是FMCW雷达进行多目标信息提取的有效手段，通过对雷达发送的多个周期的Chirp序列以及回波信息进行快时间维度和慢时间维度的处理，即可得到距离多普勒热力图，进而可以提取多目标的距离和速度信息。<br><a id="more"></a><br><img src="https://img-blog.csdnimg.cn/20200212132950250.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="FMCW Multi-Chirp"><br>在FMCW的差拍信号中，我们知道，差拍信号的频率为</p>
 <script type="math/tex; mode=display">f_{movingBeat} = f_{staticBeat} \pm f_d = \frac{2f_cR}{Ct_c} \pm \frac{2fv}{C} \tag 1</script><p>其中$f_{movingBeat}$和$f_{staticBeat}$分别为目标运动和静止状态下差拍信号的频率，$f_d$为多普勒频率，$f_c$为扫频带宽，$R$为目标距离，$C$为光速，$t_c$为扫频周期，$f$为Chirp信号中心频率，$v$为目标速度。</p>
 <h2 id="1-1-快时间维度处理-Range-FFT"><a href="#1-1-快时间维度处理-Range-FFT" class="headerlink" title="1.1. 快时间维度处理(Range-FFT)"></a>1.1. 快时间维度处理(Range-FFT)</h2><p>&emsp;&emsp;快时间维度即单个周期的Chirp序列扫频周期时间很短，短到几乎可以将多普勒频率带来的影响忽略不计($t_c$↓，公式(1)中$f_{staticBeat}$项占了主要的位置)，认为此时通过RDM热力图提取到的动目标在距离维度上的动目标差频$f_{movingBeat}$与静目标差频$f_{staticBeat}$近似相等，即</p>
@@ -184,7 +184,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>树莓派踩坑日记——初始配置</title>
-    <url>/2020/02/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/</url>
+    <url>/2019/12/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p><strong><em>无显示器无键盘、仅有一根网线时初步配置树莓派</em></strong><br><a id="more"></a></p>
 <h1 id="1-Raspbian系统安装"><a href="#1-Raspbian系统安装" class="headerlink" title="1. Raspbian系统安装"></a>1. Raspbian系统安装</h1><p>使用读卡器烧录Raspbian镜像，可以烧录已经开启SSH的镜像源，方便直接连接，未开启SSH的话，在boot分区建立一个名为ssh的文件(无后缀)，即可</p>
 <h1 id="2-通过网线连接树莓派"><a href="#2-通过网线连接树莓派" class="headerlink" title="2. 通过网线连接树莓派"></a>2. 通过网线连接树莓派</h1><p>在控制面版——网络和Internet——网络连接界面设置网络共享，然后网线连接树莓派，进入<code>cmd终端</code>，输入</p>
@@ -210,7 +210,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>Linux中的echo命令做文本写入及文本追加</title>
-    <url>/2020/02/26/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/</url>
+    <url>/2019/10/23/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/</url>
     <content><![CDATA[<p>Linux中的<code>echo</code>命令，使用</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> text &gt; text.txt</span><br></pre></td></tr></table></figure>
 <p>可以将text文本重定向至text.txt中<br><a id="more"></a></p>
@@ -224,7 +224,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>Matplotlib绘图中文无法显示</title>
-    <url>/2020/02/26/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <url>/2019/10/23/Matplotlib%E7%BB%98%E5%9B%BE%E4%B8%AD%E6%96%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><a id="more"></a>
 <p>在使用Matplotlib绘图过程中，中文无法显示，如下</p>
 <p><img src="https://img-blog.csdnimg.cn/20191023165735108.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文无法显示"><br>只需要在程序中添加以下代码即可</p>
@@ -240,7 +240,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>Python中的引用与浅拷贝</title>
-    <url>/2020/02/26/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
+    <url>/2019/10/23/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
     <content><![CDATA[<h1 id="1-导语"><a href="#1-导语" class="headerlink" title="1. 导语"></a>1. 导语</h1><p>挺绕的知识点，自己边看别人的博客边整理自己遇到的问题，磕磕绊绊写下这篇博客<br><a id="more"></a></p>
 <h1 id="2-浅谈变量、对象及引用间的关系"><a href="#2-浅谈变量、对象及引用间的关系" class="headerlink" title="2. 浅谈变量、对象及引用间的关系"></a>2. 浅谈变量、对象及引用间的关系</h1><p><img src="https://img-blog.csdnimg.cn/20191023110947950.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="变量、对象及引用间的关系"></p>
 <ul>
@@ -272,7 +272,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>Linux中的Bash操作符&amp;,&amp;&amp;,|,||及部分基本指令</title>
-    <url>/2020/02/26/Linux%E4%B8%AD%E7%9A%84Bash%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%8F%8A%E9%83%A8%E5%88%86%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
+    <url>/2019/10/03/Linux%E4%B8%AD%E7%9A%84Bash%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%8F%8A%E9%83%A8%E5%88%86%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="1-操作符-amp-amp-与"><a href="#1-操作符-amp-amp-与" class="headerlink" title="1. 操作符&amp;&amp;与||"></a>1. 操作符&amp;&amp;与||</h1><ul>
 <li>&amp;&amp;表示当前一条命令执行成功时,执行后一条命令</li>
 <li>||表示当前一条命令执行失败时,才执行后一条命令<a id="more"></a>
@@ -298,7 +298,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2020/02/26/hello-world/</url>
+    <url>/2019/10/02/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
 <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>

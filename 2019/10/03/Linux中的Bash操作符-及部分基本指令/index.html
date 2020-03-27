@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    树莓派踩坑日记——初始配置 |  GtJason1998
+    Linux中的Bash操作符&amp;,&amp;&amp;,|,||及部分基本指令 |  GtJason1998
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -32,7 +32,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-树莓派踩坑日记——初始配置" class="article article-type-post" itemscope
+  <article id="post-Linux中的Bash操作符-及部分基本指令" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +40,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  树莓派踩坑日记——初始配置
+  Linux中的Bash操作符&amp;,&amp;&amp;,|,||及部分基本指令
 </h1>
   
 
@@ -49,12 +49,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/02/26/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2020-02-26T07:56:34.000Z" itemprop="datePublished">2020-02-26</time>
+      <a href="/2019/10/03/Linux%E4%B8%AD%E7%9A%84Bash%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%8F%8A%E9%83%A8%E5%88%86%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2019-10-03T07:43:38.000Z" itemprop="datePublished">2019-10-03</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/RaspberryPi/">RaspberryPi</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
       
@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">541字</span>
+            <span class="post-count">532字</span>
         </span>
     </span>
 
@@ -100,24 +100,24 @@
       
 
       
-      <p><strong><em>无显示器无键盘、仅有一根网线时初步配置树莓派</em></strong><br><a id="more"></a></p>
-<h1 id="1-Raspbian系统安装"><a href="#1-Raspbian系统安装" class="headerlink" title="1. Raspbian系统安装"></a>1. Raspbian系统安装</h1><p>使用读卡器烧录Raspbian镜像，可以烧录已经开启SSH的镜像源，方便直接连接，未开启SSH的话，在boot分区建立一个名为ssh的文件(无后缀)，即可</p>
-<h1 id="2-通过网线连接树莓派"><a href="#2-通过网线连接树莓派" class="headerlink" title="2. 通过网线连接树莓派"></a>2. 通过网线连接树莓派</h1><p>在控制面版——网络和Internet——网络连接界面设置网络共享，然后网线连接树莓派，进入<code>cmd终端</code>，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure>
-<p>查看分配的ip地址，使用命令连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@ip_address</span><br></pre></td></tr></table></figure>
-<h1 id="3-初始配置"><a href="#3-初始配置" class="headerlink" title="3. 初始配置"></a>3. 初始配置</h1><h2 id="3-1-wifi配置"><a href="#3-1-wifi配置" class="headerlink" title="3.1. wifi配置"></a>3.1. wifi配置</h2><p>打开<code>wifi</code>，修改wifi配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></table></figure>
-<p>改成如下格式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line">country=CN</span><br><span class="line">network=&#123;</span><br><span class="line">        ssid=<span class="string">"MERCURY_930E"</span></span><br><span class="line">        psk=<span class="string">"606606606"</span></span><br><span class="line">        key_mgmt=WPA-PSK</span><br><span class="line">        priority=4</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最好将手机热点设置为最高优先级，通过设置优先级，保证你的树莓派可以连上wifi，之后只需通过起到路由功能的设备即可查看树莓派ip，同理通过ssh连接。<br>还有就是，按照网上方法修改<code>/etc/dhcpcd.conf</code>路径下的文件，设置静态ip，可以保证树莓派可以访问，但存在无法访问网络的问题，可能是DNS未配置好所致。</p>
-<h2 id="3-2-raspi-config"><a href="#3-2-raspi-config" class="headerlink" title="3.2. raspi-config"></a>3.2. raspi-config</h2><h3 id="3-2-1-更改密码"><a href="#3-2-1-更改密码" class="headerlink" title="3.2.1. 更改密码"></a>3.2.1. 更改密码</h3><p>选择第一项，按提示更改密码</p>
-<h3 id="3-2-2-拓展文件系统"><a href="#3-2-2-拓展文件系统" class="headerlink" title="3.2.2. 拓展文件系统"></a>3.2.2. 拓展文件系统</h3><p>保证你的整张SD卡可以被你的Raspbian系统访问，通过如下命令可以查看区别</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-3-更改分辨率"><a href="#3-2-3-更改分辨率" class="headerlink" title="3.2.3. 更改分辨率"></a>3.2.3. 更改分辨率</h3><p>一般来说，需要根据你的显示器更改分辨率，视情况而定</p>
-<h2 id="3-3-更改镜像源"><a href="#3-3-更改镜像源" class="headerlink" title="3.3. 更改镜像源"></a>3.3. 更改镜像源</h2><p>修改<code>/etc/apt/sources.list</code>和<code>/etc/apt/sources.list.d/raspi.list</code>文件，更改方法网上搜索很多，更改镜像源，然后执行更新指令即可完成初步配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure>
-<h1 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h1><p>千万不要在操作文件系统/使用树莓派GPIO口时断电，可能会造成文件系统损坏，导致之后无法正常进入系统，也就导致不能通过wifi或者网线连接树莓派</p>
+      <h1 id="1-操作符-amp-amp-与"><a href="#1-操作符-amp-amp-与" class="headerlink" title="1. 操作符&amp;&amp;与||"></a>1. 操作符&amp;&amp;与||</h1><ul>
+<li>&amp;&amp;表示当前一条命令执行成功时,执行后一条命令</li>
+<li>||表示当前一条命令执行失败时,才执行后一条命令<a id="more"></a>
+当前目录下的子目录如下图所示：<br><img src="https://img-blog.csdnimg.cn/20191003000600742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70" alt="操作符&amp;&amp;与||]"><br>使用如下命令区分&amp;&amp;与||的不同之处<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Documents/ &amp;&amp; <span class="built_in">echo</span> success    <span class="comment">#success</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> Doc/ &amp;&amp; <span class="built_in">echo</span> fail             <span class="comment">#fail</span></span><br><span class="line"><span class="built_in">cd</span> Doc/ || <span class="built_in">echo</span> success          <span class="comment">#success</span></span><br><span class="line"><span class="built_in">cd</span> Documents/ || <span class="built_in">echo</span> fail       <span class="comment">#fail</span></span><br></pre></td></tr></table></figure>
+执行结果如下：<br><img src="https://img-blog.csdnimg.cn/20191003001614414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70" alt="操作符&amp;&amp;与||"><br>根据ls命令返回的结果可知，当前目录下存在名为Documents的子目录，不存在名为Doc的子目录，所以第二条指令可以进入Documents子目录并输出success；接着使用命令返回上一层目录，而当前目录下不存在名为Doc的子目录，所以第三条指令不会输出fail；||的解读方法以此类推。</li>
+</ul>
+<h1 id="2-操作符-amp-与"><a href="#2-操作符-amp-与" class="headerlink" title="2. 操作符&amp;与|"></a>2. 操作符&amp;与|</h1><ul>
+<li>&amp;表示将任务置于后台运行</li>
+<li>|表示将前一条命令的输出，用作后一条命令的输入<br>为了更好的解读操作符&amp;与|，首先编写了一个如下的C语言程序</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="keyword">if</span>(argc != <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">"usage: CPU &lt;string&gt;\n"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">char</span> *str = argv[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        usleep(<span class="number">1000000</span>);   <span class="comment">//delay 1S</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,str);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该程序在执行时，每隔1秒输出一次执行时的命令行参数；编译：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc cpu.c -o cpu.out</span><br></pre></td></tr></table></figure>
+<p>通过如下命令来后台执行多个任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./cpu.out A &amp; ./cpu.out B &amp; ./cpu.out C &amp;</span><br></pre></td></tr></table></figure>
+<p>执行上述命令后，通过如下指令来查看运行情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -A | grep cpu.out</span><br></pre></td></tr></table></figure>
+<p>上述指令中包含了管道符|，前一条指令的输出做后一条指令的输入，通过ps -A查看进程状态，输出信息做后一条字符串搜索指令grep的输入，进而实现查询cpu.out进程的运行情况，结果如下<br><img src="https://img-blog.csdnimg.cn/20191003004439729.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70" alt="操作符&amp;与|"><br><img src="https://img-blog.csdnimg.cn/20191003004453373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70" alt="操作符&amp;与|"><br>可以看见已经查询到了后台运行的三个cpu.out进程，接着使用kill  PID指令关闭这三个进程<br><img src="https://img-blog.csdnimg.cn/20191003004658967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70" alt="操作符&amp;与|"><br><img src="https://img-blog.csdnimg.cn/2019100300471039.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70" alt="操作符&amp;与|"></p>
 
       
       <!-- reward -->
@@ -139,19 +139,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/02/26/FMCW%E9%9B%B7%E8%BE%BE%E8%B7%9D%E7%A6%BB%E5%A4%9A%E6%99%AE%E5%8B%92-RDM-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%AD%E8%B7%9D%E7%A6%BB%E5%88%86%E8%BE%A8%E7%8E%87%E5%92%8C%E9%80%9F%E5%BA%A6%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E6%8E%A8%E5%AF%BC/" class="article-nav-link">
+      <a href="/2019/10/23/Python%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            FMCW雷达距离多普勒(RDM)处理方法中距离分辨率和速度分辨率的推导
+            Python中的引用与浅拷贝
           
         </div>
       </a>
     
     
-      <a href="/2020/02/26/Linux%E4%B8%AD%E7%9A%84echo%E5%91%BD%E4%BB%A4%E5%81%9A%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E5%8F%8A%E6%96%87%E6%9C%AC%E8%BF%BD%E5%8A%A0/" class="article-nav-link">
+      <a href="/2019/10/02/hello-world/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Linux中的echo命令做文本写入及文本追加</div>
+        <div class="article-nav-title">Hello World</div>
       </a>
     
   </nav>
