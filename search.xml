@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>线性子空间笔记</title>
+    <url>/2020/03/29/%E7%BA%BF%E6%80%A7%E5%AD%90%E7%A9%BA%E9%97%B4%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
+<ul>
+<li>关于线性子空间的证明，需证明<strong>集合$V_1$为线性空间$V$的非空子集合</strong>，然后证明空间$V_1$同时满足<strong>加法封闭性</strong>和<strong>数乘封闭性</strong></li>
+<li>关于直和的证明： <br> <strong>若$V_1$、$V_2$为线性空间$V$的子空间(需证明)</strong>，则如下4种表述等价：<ul>
+<li>$V_1+V_2$成为直和$V_1\oplus V_2$</li>
+<li>$V_1\cap V_2 = \{0\}$</li>
+<li>$dim\{V_1+V_2\} = dimV_1 + dimV_2$</li>
+<li>$x_1,x_2,\cdots,x_s$为$V_1$的基，$y_1,y_2,\cdots,y_t$为$V_2$的基，则$x_1,x_2,\cdots,x_s,y_1,y_2,\cdots,y_t$为$V_1+V_2$的基</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Matrix Theory</category>
+      </categories>
+  </entry>
+  <entry>
     <title>性能测量方法学习笔记</title>
     <url>/2020/03/21/%E6%80%A7%E8%83%BD%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><strong>性能测量方法本节主要讲四个代价函数</strong><br><a id="more"></a></p>
