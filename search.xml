@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>权向量求解学习笔记</title>
+    <url>/2020/04/01/%E6%9D%83%E5%90%91%E9%87%8F%E6%B1%82%E8%A7%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="最速下降法"><a href="#最速下降法" class="headerlink" title="最速下降法"></a>最速下降法</h2><ul>
+<li>最速下降法梯度搜索式<a id="more"></a>
+<script type="math/tex; mode=display">
+W_{k+1} = W_{k} + \mu(-\nabla_k)</script></li>
+<li><p><strong>单实权</strong>情况下，即仅有一个输入通道，权向量$W$为一个标量，输入信号相关矩阵$R$维度为$1\times 1$，此时$R$表示输入信号的功率，用$\lambda$表示，故代价函数$\varepsilon(V)$中的偏差功率部分为</p>
+<script type="math/tex; mode=display">
+V_k^HRV_k = \lambda(W_k - W_{opt})^2 \tag{1}</script><p>故 </p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{d}\varepsilon}{\mathrm{d}\omega} = 2\lambda(W_k - W_{opt}) = 2\lambda V_k \tag{2}</script></li>
+<li><p><strong>高维自适应系统</strong>下(权向量$W$为$N \times 1$的向量)，类比(2)，梯度算子</p>
+<script type="math/tex; mode=display">
+\nabla_k = 2RV_k = 2R[W_k - W_{opt}]  = 2R[W_k - R^{-1}P^{*}] = 2[RW_k - P^{*}] \tag{3}</script><p>在最小均方误差准则(MMSE)下，$W_{opt} = R^{-1}P^{*}$</p>
+</li>
+<li>高维自适应系统下，需对权偏差向量$V$进行解耦合处理，即令<script type="math/tex; mode=display">
+V_k = QV_k^{'}</script>其中$Q$为信号相关矩阵$R$的特征向量矩阵，$V^{‘}$为经过解耦合处理后的权偏差向量，权偏差向量迭代公式由<script type="math/tex; mode=display">
+V_{k+1} = \underbrace{[I - 2\mu R]}_{Non-Diagonal}V_k = \underbrace{[I - 2\mu R]^{k}}_{Non-Diagonal}V_0 \tag{4}</script>变化为<script type="math/tex; mode=display">
+V_{k+1}^{'} = \underbrace{[I - 2\mu \Lambda]}_{Diagonal}V_k^{'} = \underbrace{[I - 2\mu \Lambda]^{k}}_{Diagonal}V_0^{'} \tag{5}</script>式中，$V_0$、$V_0^{‘}$为权偏差向量迭代初始值，$R$为输入信号相关矩阵，$\Lambda$为输入信号相关矩阵$R$的特征值矩阵($\Lambda$为一对角阵)，此时标记部分由非对角阵变为了对角阵，好处是两次迭代间某一通道第$k+1$次权偏差值只和本通道第$k$次权偏差值有关，和其他通道第$k$次的权偏差值无关，即实现了所谓的解耦合，即<script type="math/tex; mode=display">
+v_{k+1,l}^{'} = (1 - 2\mu \lambda_l)^kv_{0,l}^{'} \tag{6}</script>其中，$k$为迭代次数，$l$表示信号的通道编号<h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2></li>
+<li>参考(3)前两项，有$\nabla_k = 2R[W_k - W_{opt}]$，故可得<script type="math/tex; mode=display">
+W_{opt} = W_k - \frac{1}{2}R^{-1}\nabla_k \tag{7}</script></li>
+<li>牛顿法梯度搜索式<script type="math/tex; mode=display">
+W_{k+1} = W_{k} - \mu R^{-1}\nabla_k \tag{8}</script>按(7)来说，牛顿法应该是一步收敛的，但由于实际应用的过程中，无法得到$R^{-1}$和$\nabla_k$的真值，得到的仅为估计值$\hat{R}^{-1}$和$\hat{\nabla}_k$，故需进行迭代求解稳定权值</li>
+</ul>
+<h1 id="微商法梯度估计"><a href="#微商法梯度估计" class="headerlink" title="微商法梯度估计"></a>微商法梯度估计</h1><ul>
+<li>稳态性能分析：指$\nabla_k \approx 0$</li>
+<li>最速下降法和牛顿法进行权向量迭代的过程中，需要对梯度算子$\nabla_k$进行估计，故梯度估计值表示为$\hat{\nabla}_k$<script type="math/tex; mode=display">
+\hat{\nabla}_k = \nabla_k + N_k</script>其中$N_k$为梯度估计噪声</li>
+<li><del>微商法梯度估计里各种公式推导看得我好懵。。。</del> </li>
+</ul>
+]]></content>
+      <categories>
+        <category>Adaptive Signal Processing</category>
+      </categories>
+  </entry>
+  <entry>
     <title>线性子空间笔记</title>
     <url>/2020/03/29/%E7%BA%BF%E6%80%A7%E5%AD%90%E7%A9%BA%E9%97%B4%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
