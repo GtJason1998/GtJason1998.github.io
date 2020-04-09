@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何读论文</title>
+    <url>/2020/04/09/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</url>
+    <content><![CDATA[<ul>
+<li><a href="https://www.bilibili.com/video/BV1Z541147b1" target="_blank" rel="noopener">Bilibili大佬up分享论文阅读方法</a><a id="more"></a></li>
+<li><p>读论文 $\ne$ 读教材</p>
+<ul>
+<li>教材花费了作者大量的时间去打磨</li>
+<li>大多数的论文不值得逐字逐句的去精心研读</li>
+<li>不是所有的论文都值得去复现，顶会中的best paper或做了oral的论文更值得复现</li>
+</ul>
+</li>
+<li><p>综述性论文</p>
+<ul>
+<li>对某一领域用到的方法或者工具进行总结</li>
+</ul>
+</li>
+<li><p>确定需不需要精读一篇文章</p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文章标题</th>
+<th style="text-align:center">摘要(用自己的一句话描述，说清楚该文用了什么方法解决了什么问题)</th>
+<th style="text-align:center">是否需要精读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">标题1</td>
+<td style="text-align:center">文章1摘要(用自己的一句话描述)</td>
+<td style="text-align:center">是或否</td>
+</tr>
+<tr>
+<td style="text-align:center">$\vdots$</td>
+<td style="text-align:center">$\vdots$</td>
+<td style="text-align:center">$\vdots$</td>
+</tr>
+<tr>
+<td style="text-align:center">标题n</td>
+<td style="text-align:center">文章n摘要(用自己的一句话描述)</td>
+<td style="text-align:center">是或否</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>对于需要精读的文章，<del>得先把自己假想成一个杠精</del>，带着挑错的方式、<strong>带着提问的态度</strong>去精读，精读顺序：</p>
+<ul>
+<li><code>Abstract</code></li>
+<li><code>Introducion</code></li>
+<li><code>Conclusion</code></li>
+<li><code>Algorithm\Model\System Design</code></li>
+<li><code>Experiment</code></li>
+<li><code>Related Work</code><blockquote>
+<p>中间任何一步若发现不是所需解决的问题，或正在读的是一篇<del>辣鸡文章</del>，也可就此停止阅读</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>精读<code>Algorithm\Model\System Design</code>部分需有主次之分，<strong>每段的第1句是重点</strong>，需要仔细阅读，第1句一般是对某一段的一个整体概括；第1句阅读后如果比较了解，暂且可以先跳过该段后面的细节部分</p>
+</li>
+<li>精读<code>Algorithm\Model\System Design</code>部分后，如果仍然对本篇论文感兴趣，这个时候才可以开始<code>Experiment</code>部分的阅读</li>
+<li>精读<code>Experiment</code>部分，这个时候才决定该篇论文是否需要复现，因为复现论文需要耗费大量的时间精力</li>
+<li><code>Related Work</code>部分也很重要，该部分强调该文与相关工作间的关系，该领域以前用到了什么样的方法$\ldots \dots$，需要精读</li>
+</ul>
+<blockquote>
+<ul>
+<li>读完后需进行反思<ul>
+<li>在阅读摘要部分时自己提出的问题，在读完整篇文章后有没有得到很好的解答<ul>
+<li>Q1:……………………?<ul>
+<li>A1:………………….</li>
+</ul>
+</li>
+<li>Q2:……………………?<ul>
+<li>A2:…………………. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Related Work(挑选文中<code>Related Work</code>中重要的部分记录即可)<ul>
+<li>XXXXXX</li>
+<li>XXXXXX</li>
+<li>XXXXXX</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>单纯的摘抄文中的内容没有太大的意义，重要的是思考，转化成自己的语言来描述</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>矩阵对角化笔记</title>
     <url>/2020/04/05/%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
