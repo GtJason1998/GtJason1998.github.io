@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基本自适应算法学习笔记</title>
+    <url>/2020/04/14/%E5%9F%BA%E6%9C%AC%E8%87%AA%E9%80%82%E5%BA%94%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>&nbsp;<br><a id="more"></a></p>
+<ul>
+<li><p>最小均方算法(LMS)：亮点在于将最速下降法中的微商法梯度估计换为了瞬时梯度估计，计算量大幅下降，即：</p>
+<blockquote>
+<p>LMS = 最速下降法 + 瞬时梯度估计</p>
+</blockquote>
+</li>
+<li><p>序列回归算法(SER)：</p>
+<blockquote>
+<p>SER = 牛顿法 + 瞬时梯度估计 + 迭代求逆</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Adaptive Signal Processing</category>
+      </categories>
+  </entry>
+  <entry>
     <title>如何读论文</title>
     <url>/2020/04/09/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</url>
     <content><![CDATA[<h1 id="Bilibili大佬up分享论文阅读方法"><a href="#Bilibili大佬up分享论文阅读方法" class="headerlink" title="Bilibili大佬up分享论文阅读方法"></a>Bilibili大佬up分享论文阅读方法</h1><h3 id="1-nbsp-入门算法岗，准备读研，如何高效阅读机器学习顶会论文？"><a href="#1-nbsp-入门算法岗，准备读研，如何高效阅读机器学习顶会论文？" class="headerlink" title="1 &nbsp;入门算法岗，准备读研，如何高效阅读机器学习顶会论文？"></a>1 &nbsp;<a href="https://www.bilibili.com/video/BV1Z541147b1" target="_blank" rel="noopener">入门算法岗，准备读研，如何高效阅读机器学习顶会论文？</a></h3><a id="more"></a>
