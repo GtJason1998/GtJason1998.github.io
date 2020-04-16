@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">164字</span>
+            <span class="post-count">247字</span>
         </span>
     </span>
 
@@ -102,12 +102,27 @@
       
       <h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><a id="more"></a>
 <p>在使用Matplotlib绘图过程中，中文无法显示，如下</p>
-<p><img src="https://img-blog.csdnimg.cn/20191023165735108.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文无法显示"><br>只需要在程序中添加以下代码即可</p>
+<p><img src="https://img-blog.csdnimg.cn/20191023165735108.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文无法显示"></p>
+<ul>
+<li>解决方法一</li>
+</ul>
+<p>只需要在程序中添加以下代码即可</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> mpl</span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>] <span class="comment"># 指定默认字体</span></span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191023170033174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文正常显示"><br><strong>但若是使用的Linux系统</strong>,比如我使用的是deepin，则需要先去网上下载SimHei.ttf的字体文件，拷贝至以下目录下(user处应为对应用户名，具体情况具体分析)</p>
+<p><strong>但若是使用的Linux系统</strong>,比如我使用的是deepin，则需要先去网上下载SimHei.ttf的字体文件，拷贝至以下目录下(user处应为对应用户名，具体情况具体分析)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/.<span class="built_in">local</span>/lib/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf</span><br></pre></td></tr></table></figure>
 <p>然后再删除掉以下这个名为matplotlib的目录即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/user/.cache/matplotlib</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决方法二</li>
+</ul>
+<p>比如此图是在设置title时，中文无法正常显示只需给<code>plt.title()</code>增加参数即可，即<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.title(<span class="string">'3D图'</span>,family = <span class="string">'SimHei'</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>关于Python中可以使用的字体种类及相关属性，详见<blockquote>
+<p><a href="https://blog.csdn.net/weixin_40161254/article/details/82858627" target="_blank" rel="noopener">matplotlib 修改字体属性(旋转，类型，粗细，颜色，大小)</a></p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20191023170033174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="中文正常显示"></p>
 
       
       <!-- reward -->
