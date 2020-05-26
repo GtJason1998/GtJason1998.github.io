@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>职业生涯思考</title>
+    <url>/2020/05/26/%E8%BD%AC%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%91%98-%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>职业&amp;人生思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无题待定</title>
     <url>/2020/05/09/%E6%97%A0%E9%A2%98%E5%BE%85%E5%AE%9A/</url>
     <content><![CDATA[<p>听了两档很有意思的节目，先把坑挖着，最近肝毕设论文。。。<br><a id="more"></a><br>后续准备抽时间写个听后感，毕竟想要真正的学到点什么、领悟点什么，光是去听、光是输入可能效果欠佳，还需要有一定的输出、产出，形成一个学习闭环，不断迭代优化</p>
@@ -16,6 +27,9 @@
       <categories>
         <category>杂记</category>
       </categories>
+      <tags>
+        <tag>职业&amp;人生思考</tag>
+      </tags>
   </entry>
   <entry>
     <title>基本自适应算法学习笔记</title>
@@ -35,8 +49,11 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Adaptive Signal Processing</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Adaptive Signal Processing</tag>
+      </tags>
   </entry>
   <entry>
     <title>如何读论文</title>
@@ -144,6 +161,9 @@
       <categories>
         <category>杂记</category>
       </categories>
+      <tags>
+        <tag>磕盐</tag>
+      </tags>
   </entry>
   <entry>
     <title>矩阵对角化笔记</title>
@@ -172,8 +192,11 @@ A^{T} = A</script><p>正定矩阵定义：特征值都是正数的实对称矩�
 </ul>
 ]]></content>
       <categories>
-        <category>Matrix Theory</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Matrix Theory</tag>
+      </tags>
   </entry>
   <entry>
     <title>权向量求解学习笔记</title>
@@ -209,8 +232,11 @@ W_{k+1} = W_{k} - \mu R^{-1}\nabla_k \tag{8}</script>按(7)来说，牛顿法应
 </ul>
 ]]></content>
       <categories>
-        <category>Adaptive Signal Processing</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Adaptive Signal Processing</tag>
+      </tags>
   </entry>
   <entry>
     <title>线性子空间笔记</title>
@@ -228,8 +254,11 @@ W_{k+1} = W_{k} - \mu R^{-1}\nabla_k \tag{8}</script>按(7)来说，牛顿法应
 </ul>
 ]]></content>
       <categories>
-        <category>Matrix Theory</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Matrix Theory</tag>
+      </tags>
   </entry>
   <entry>
     <title>性能测量方法学习笔记</title>
@@ -278,8 +307,11 @@ var(y_k) = E[S(t)^*S(t)^T] + W^HR_nW</script><p>此时调整权值使得方差(�
 </ul>
 ]]></content>
       <categories>
-        <category>Adaptive Signal Processing</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Adaptive Signal Processing</tag>
+      </tags>
   </entry>
   <entry>
     <title>线性空间笔记</title>
@@ -303,8 +335,11 @@ var(y_k) = E[S(t)^*S(t)^T] + W^HR_nW</script><p>此时调整权值使得方差(�
 </ul>
 ]]></content>
       <categories>
-        <category>Matrix Theory</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Matrix Theory</tag>
+      </tags>
   </entry>
   <entry>
     <title>阵列信号模型</title>
@@ -328,8 +363,11 @@ X = \underbrace{\underbrace{A}_{M\times k}\underbrace{S(t)}_{k\times m} + \under
 </ul>
 ]]></content>
       <categories>
-        <category>Adaptive Signal Processing</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Adaptive Signal Processing</tag>
+      </tags>
   </entry>
   <entry>
     <title>信号矩阵理论学习笔记</title>
@@ -375,8 +413,11 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
 </ul>
 ]]></content>
       <categories>
-        <category>Adaptive Signal Processing</category>
+        <category>研究生课程</category>
       </categories>
+      <tags>
+        <tag>Adaptive Signal Processing</tag>
+      </tags>
   </entry>
   <entry>
     <title>FMCW雷达距离多普勒(RDM)处理方法中距离分辨率和速度分辨率的推导</title>
@@ -410,13 +451,19 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
 </ul>
 ]]></content>
       <categories>
-        <category>Radar</category>
+        <category>磕盐</category>
       </categories>
+      <tags>
+        <tag>磕盐</tag>
+      </tags>
   </entry>
   <entry>
     <title>树莓派踩坑日记——初始配置</title>
     <url>/2019/12/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p><strong><em>无显示器无键盘、仅有一根网线时初步配置树莓派</em></strong><br><a id="more"></a></p>
+    <content><![CDATA[<blockquote>
+<p><strong>无显示器无键盘、仅有一根网线时初步配置树莓派</strong></p>
+</blockquote>
+<a id="more"></a>
 <h1 id="1-Raspbian系统安装"><a href="#1-Raspbian系统安装" class="headerlink" title="1. Raspbian系统安装"></a>1. Raspbian系统安装</h1><p>使用读卡器烧录Raspbian镜像，可以烧录已经开启SSH的镜像源，方便直接连接，未开启SSH的话，在boot分区建立一个名为ssh的文件(无后缀)，即可</p>
 <h1 id="2-通过网线连接树莓派"><a href="#2-通过网线连接树莓派" class="headerlink" title="2. 通过网线连接树莓派"></a>2. 通过网线连接树莓派</h1><p>在控制面版——网络和Internet——网络连接界面设置网络共享，然后网线连接树莓派，进入<code>cmd终端</code>，输入</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure>
@@ -436,8 +483,12 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
 <h1 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h1><p>千万不要在操作文件系统/使用树莓派GPIO口时断电，可能会造成文件系统损坏，导致之后无法正常进入系统，也就导致不能通过wifi或者网线连接树莓派</p>
 ]]></content>
       <categories>
-        <category>RaspberryPi</category>
+        <category>raspberryPi</category>
       </categories>
+      <tags>
+        <tag>raspberryPi</tag>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Linux中的echo命令做文本写入及文本追加</title>
@@ -452,6 +503,9 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
       <categories>
         <category>Linux</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Matplotlib绘图中文无法显示</title>
@@ -483,6 +537,9 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
       <categories>
         <category>Python</category>
       </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python中的引用与浅拷贝</title>
@@ -515,6 +572,9 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
       <categories>
         <category>Python</category>
       </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title>Linux中的Bash操作符&amp;,&amp;&amp;,|,||及部分基本指令</title>
@@ -541,6 +601,9 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
       <categories>
         <category>Linux</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -559,7 +622,10 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
 <p>More info: <a href="https://hexo.io/docs/commands" target="_blank" rel="noopener">Commands</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Blog</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
 </search>

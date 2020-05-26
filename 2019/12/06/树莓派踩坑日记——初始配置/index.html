@@ -10,7 +10,7 @@
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/iconDiy.png" />
   
   
 <link rel="stylesheet" href="/css/main.css">
@@ -54,7 +54,7 @@
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/RaspberryPi/">RaspberryPi</a>
+    <a class="article-category-link" href="/categories/raspberryPi/">raspberryPi</a>
   </div>
 
       
@@ -100,7 +100,10 @@
       
 
       
-      <p><strong><em>无显示器无键盘、仅有一根网线时初步配置树莓派</em></strong><br><a id="more"></a></p>
+      <blockquote>
+<p><strong>无显示器无键盘、仅有一根网线时初步配置树莓派</strong></p>
+</blockquote>
+<a id="more"></a>
 <h1 id="1-Raspbian系统安装"><a href="#1-Raspbian系统安装" class="headerlink" title="1. Raspbian系统安装"></a>1. Raspbian系统安装</h1><p>使用读卡器烧录Raspbian镜像，可以烧录已经开启SSH的镜像源，方便直接连接，未开启SSH的话，在boot分区建立一个名为ssh的文件(无后缀)，即可</p>
 <h1 id="2-通过网线连接树莓派"><a href="#2-通过网线连接树莓派" class="headerlink" title="2. 通过网线连接树莓派"></a>2. 通过网线连接树莓派</h1><p>在控制面版——网络和Internet——网络连接界面设置网络共享，然后网线连接树莓派，进入<code>cmd终端</code>，输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure>
@@ -130,6 +133,8 @@
     <footer class="article-footer">
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberryPi/" rel="tag">raspberryPi</a></li></ul>
+
 
     </footer>
 
@@ -267,7 +272,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="GtJason1998"></a>
+    <a href="/"><img src="/images/iconDiy-side.svg" alt="GtJason1998"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -278,6 +283,10 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
     </li>
     
     <li class="nav-item">
@@ -537,22 +546,6 @@
 
     
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
