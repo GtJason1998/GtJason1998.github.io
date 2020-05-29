@@ -542,7 +542,7 @@ S_{music} = \frac{1}{A(\theta_i)^HP_NA(\theta_i)}</script>&emsp;&emsp;当且仅�
 <h1 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h1><p>千万不要在操作文件系统/使用树莓派GPIO口时断电，可能会造成文件系统损坏，导致之后无法正常进入系统，也就导致不能通过wifi或者网线连接树莓派</p>
 ]]></content>
       <categories>
-        <category>raspberryPi</category>
+        <category>RaspberryPi</category>
       </categories>
       <tags>
         <tag>Linux</tag>
