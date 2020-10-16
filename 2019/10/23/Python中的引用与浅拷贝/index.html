@@ -123,7 +123,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">array = np.arange(<span class="number">5</span>)</span><br><span class="line">array_illusion = array</span><br><span class="line">array_copy = array.copy()</span><br><span class="line">print(id(array),id(array_illusion),id(array_copy))</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20191023162826950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMjQ4NDcx,size_16,color_FFFFFF,t_70#pic_center" alt="浅拷贝"><br>根据输出的内存地址可以得知，未使用copy()方法的赋值语句，只是给第1行建立的ndarray对象又建立了一个新的引用，并贴上array_illusion的“标签”，而使用copy()方法则是真正的建立了一个新的ndarray对象</p>
 <h1 id="5-后记"><a href="#5-后记" class="headerlink" title="5. 后记"></a>5. 后记</h1><p>最近在完成学校的数值计算作业的时候，将Matlab的程序转为了Python的程序来实现，由于里边每一次的迭代都需要重新赋值，自己在编写的时候又忽略了Python赋值语句本质上是在操控引用，不像Matlab那样只需要空间预分配就行，进而导致怎么都算不出正确结果，查阅资料补了补知识，在Python赋值语句的后边加上了.copy()，便得到了正确的结果，所以决定写下这篇博客，作为一个学习笔记。本来还想一起把深拷贝的内容也写了，但考虑到自己掌握的也不是太好，同时也不在这篇文章的讨论范围内，就索性等有时间再写了&gt;_&lt;</p>
-<h2 id="5-1-参考文章"><a href="#5-1-参考文章" class="headerlink" title="5.1. 参考文章"></a>5.1. 参考文章</h2><p><a href="https://blog.csdn.net/qq_40911298/article/details/100060756" target="_blank" rel="noopener">Python 赋值引用、浅拷贝、深拷贝详细解析</a><br><a href="https://my.oschina.net/leejun2005/blog/145911" target="_blank" rel="noopener">python基础（5）：深入理解 python 中的赋值、引用、拷贝、作用域</a><br><a href="https://blog.csdn.net/Invokar/article/details/89138684" target="_blank" rel="noopener">Python变量引用浅析</a></p>
+<h2 id="5-1-参考文章"><a href="#5-1-参考文章" class="headerlink" title="5.1. 参考文章"></a>5.1. 参考文章</h2><ul>
+<li><a href="https://blog.csdn.net/qq_40911298/article/details/100060756" target="_blank" rel="noopener">Python 赋值引用、浅拷贝、深拷贝详细解析</a></li>
+<li><a href="https://my.oschina.net/leejun2005/blog/145911" target="_blank" rel="noopener">python基础（5）：深入理解 python 中的赋值、引用、拷贝、作用域</a></li>
+<li><a href="https://blog.csdn.net/Invokar/article/details/89138684" target="_blank" rel="noopener">Python变量引用浅析</a></li>
+</ul>
 
       
       <!-- reward -->
