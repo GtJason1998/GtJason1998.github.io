@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    职业生涯思考 |  GtJason1998
+    XDU Python OJ刷题总结 |  GtJason1998
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -32,7 +32,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-转行程序员-职业生涯规划" class="article article-type-post" itemscope
+  <article id="post-XDU-Python-OJ刷题总结" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +40,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  职业生涯思考
+  XDU Python OJ刷题总结
 </h1>
   
 
@@ -49,8 +49,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/26/%E8%BD%AC%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%91%98-%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E8%A7%84%E5%88%92/" class="article-date">
-  <time datetime="2020-05-26T02:36:50.000Z" itemprop="datePublished">2020-05-26</time>
+      <a href="/2020/12/10/XDU-Python-OJ%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-12-09T16:24:27.000Z" itemprop="datePublished">2020-12-10</time>
 </a>
       
   <div class="article-category">
@@ -64,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">480字</span>
+            <span class="post-count">1.2k字</span>
         </span>
     </span>
 
@@ -73,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1分钟</span>
+            <span class="post-count">4分钟</span>
         </span>
     </span>
 </div>
@@ -100,66 +100,46 @@
       
 
       
-      <p>该篇博客参考自以下视频，总结提炼并引入了一部分自己的思考：</p>
+      <h1 id="XDU-Python-OJ刷题总结"><a href="#XDU-Python-OJ刷题总结" class="headerlink" title="XDU Python OJ刷题总结"></a>XDU Python OJ刷题总结</h1><p>这学期选了李隐峰老师的<strong>Python网络数据处理</strong>这门课，虽说到目前为止这门课绝大部分时间都在讲解Python语言的一些基础语法，但是由于这门课安排了课下OJ系统刷题以及上周日(12.6日)刚考完的线上OJ系统机考，所以还是有一定收获的。<br><a id="more"></a></p>
 <blockquote>
-<p><a href="https://www.bilibili.com/video/BV19k4y16712" target="_blank" rel="noopener"><strong>对专业不感兴趣？转行当程序员？这些致命问题你想过吗？微软码农向你丢来灵魂三问！</strong></a></p>
+<p>刷题地址：<a href="https://python.xidian.edu.cn/" target="_blank" rel="noopener">XDU Python OJ</a><br>(貌似只有选了这门课的学生才能使用这个OJ系统，没有对外开放注册入口)</p>
 </blockquote>
-<a id="more"></a>
-<h3 id="1-思考自己选择某一工作方向的动机"><a href="#1-思考自己选择某一工作方向的动机" class="headerlink" title="1. 思考自己选择某一工作方向的动机"></a>1. 思考自己选择某一工作方向的动机</h3><h3 id="2-学会对公司做背调"><a href="#2-学会对公司做背调" class="headerlink" title="2. 学会对公司做背调"></a>2. 学会对公司做背调</h3><ul>
-<li>公司层面<ul>
-<li>公司的部门团队</li>
-<li>公司的业务，这个公司靠什么赚钱</li>
-<li>公司对应的业务有什么竞品</li>
-<li>公司的行业壁垒</li>
-<li>公司的价值观，公司的管理层是什么样的人</li>
-</ul>
+<ul>
+<li><p>关于本地程序的简易调试方法<br>OJ题目的程序写完后测试数据时，每次都从网页复制数据再粘贴到运行终端多少有些麻烦，而且可能有时候还不方便随时添加自己想要测试的数据，同时对输出的数据进行查阅和调试也不太方便<br>所以参考别人的博客(<a href="https://blog.csdn.net/yanxiangtianji/article/details/8826803" target="_blank" rel="noopener">OJ程序简便调试方法</a>)捣鼓了下本地调试的简易方法：</p>
+<ul>
+<li><p>测试算法程序的文件夹下文件如下：<br><img src="https://gitee.com/gtjason1998/article_images/raw/master/article_images2.png" alt=""></p>
 </li>
-<li>研发层面<ul>
-<li>公司内部工程师文化如何<ul>
-<li>code review</li>
-<li>技术分享会</li>
-<li>工程组织架构是否合理</li>
-<li>公司开源文化，公司Github开源项目、commit、issues等</li>
-</ul>
+<li><p><code>1118.py</code>为需要测试的Python算法程序,<code>input.txt</code>中提前写入测试数据,<code>output.txt</code>是用来存放输出结果的文件</p>
 </li>
-<li>调查公司业务的法律风险<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/46413344" target="_blank" rel="noopener">P2P暴雷</a></li>
-<li>非法爬虫</li>
-</ul>
+<li><p><code>init.bat</code>脚本文件的内容如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1118.py&lt;input.txt &gt; output.txt</span><br><span class="line"><span class="built_in">type</span> output.txt</span><br></pre></td></tr></table></figure>
+<p><code>1118.py&lt;input.txt</code>部分表示运行1118.py并重定向输入流,将input.txt的内容作为运行1118.py时的输入，后半部分的<code>&gt; output.txt</code>表示将程序的输出结果重定向输出至<code>output.txt</code>文件中<br><code>type output.txt</code>表示将output.txt的内容输出至运行终端，Windows系统平台的<code>type</code>命令类似Linux系统终端下的<code>cat</code>命令</p>
 </li>
-<li>裁员风险<ul>
-<li>公司产品业务线单一，公司经营容错率低，可能会有比较大的裁员风险</li>
-</ul>
+<li><p>此时写好程序并在input.txt中写好需要测试的输入数据后，直接在对应路径下运行init.bat脚本即可</p>
 </li>
 </ul>
 </li>
+<li><p>一道模拟考试时卡住的题目<br>其实挺简单的一道题，当时脑抽了转不过弯来(<del>其实主要还是因为我人菜</del>)，题目如下</p>
+<blockquote>
+<ul>
+<li>题目描述<br>输入一个嵌套列表，嵌套层次不限，根据层次数来求列表元素的加权个数和。<br>第一层每个元素算一个元素，第二层每个元素算2个元素，第三层每个元素算3个元素，第四层每个元素算4个元素,…,以此类推进行计算。</li>
+<li>输入<br>在一行中输入一个列表。</li>
+<li>输出<br>在一行中输出加权元素个数值。</li>
+<li>样例输入<br><strong><code>[1,2,[3,4,[5,6],7],8]</code></strong></li>
+<li>样例输出<br><strong><code>15</code></strong></li>
 </ul>
-<h3 id="3-技术岗位分类"><a href="#3-技术岗位分类" class="headerlink" title="3. 技术岗位分类"></a>3. 技术岗位分类</h3><ul>
-<li>测试</li>
-<li>后端</li>
-<li>前端</li>
-<li>客户端(IOS/Android)</li>
-<li>算法岗<ul>
-<li>算法岗也属于后端的一部分，后端中针对数据的一些特殊业务(比如搜索、推荐、反垃圾、异常检测、图像、NLP、Speech)属于算法岗</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-关于各个岗位需要了解什么"><a href="#4-关于各个岗位需要了解什么" class="headerlink" title="4. 关于各个岗位需要了解什么"></a>4. 关于各个岗位需要了解什么</h3><ul>
-<li>成长路线<ul>
-<li>学会使用英文搜索，Bing\Google搜索引擎，比如关于后端工程师搜索backend engineer career path、roadmap等关键词，英文互联网环境较中文互联网环境更靠谱</li>
-<li>对照成长路线，少说多做，并不停反思自己的选择动机是否还成立</li>
-</ul>
-</li>
-<li>发展技术方面，需注重术的部分<ul>
-<li>技，主要指框架</li>
-<li>术，即理论基础<blockquote>
-<p>框架可能快速更新迭代，但理论基础不会</p>
 </blockquote>
+<ul>
+<li>正确解题思路✔<br>通过递归的方法，判断当层有没有列表，存在列表就统计该层非列表元素并乘以深度权值同时向内层列表递归并将深度权值加1，不存在列表时直接用该层元素个数乘以权值返回即可，注意递归需设置终止条件</li>
+<li>错误解题思路❌<br>模拟考时脑抽了想着用字符串操作来做，先将输入字符串中的<code>,</code>替换为空字符，然后每次遇到<code>[</code>就将权值加1，遇到<code>]</code>就将权值减1，忽略了替换掉<code>,</code>后，元素<code>12</code>将被判定为<code>1</code>和<code>2</code>两个元素，进而计算出错误的结果</li>
+<li>程序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(base,depth)</span>:</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">not</span> ([i <span class="keyword">for</span> i <span class="keyword">in</span> base <span class="keyword">if</span> type(i) == list])):</span><br><span class="line">    <span class="keyword">return</span> len([i <span class="keyword">for</span> i <span class="keyword">in</span> base])*depth</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    temp = [i <span class="keyword">for</span> i <span class="keyword">in</span> base <span class="keyword">if</span> type(i) == list]</span><br><span class="line">    tempAmount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> temp:</span><br><span class="line">        tempAmount += fn(i,depth+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> len([i <span class="keyword">for</span> i <span class="keyword">in</span> base <span class="keyword">if</span> type(i) == int])*depth + tempAmount</span><br><span class="line">List = eval(input())</span><br><span class="line">print(fn(List,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>心态建设方面<br>其实感觉自己一直就是一个心态不是特别好的人，尤其是OJ系统里这种考试，看着大家切题的提交记录并不停在实时排行榜上刷新浮动时，自己多少会有些紧张，如果自己恰好在某题卡住，那可能基本凉凉。<br><strong>其实人生是场马拉松，不是那么一场两场考试决定的，多和自己比较，总和别人比较很有可能会搞坏自己的心态</strong>，只要自己能够不停的进步就很好，不断进步带来的正反馈是很实时的，害怕犯错害怕失败其实也是玻璃心的一种表现，其实我们的人生有一定的容错性，且我们需要努力去不断地给我们的试错成本加筹码，提高我们人生的容错性。<br>最后的最后，我自己也不过就一个普通人，不会的题不要自己死磕，厉害的人很多，学会看看别人的解题思路，模仿是学习的第一步。</p>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="5-学会主动联系公司hr和公司员工，询问公司人才岗位需求"><a href="#5-学会主动联系公司hr和公司员工，询问公司人才岗位需求" class="headerlink" title="5. 学会主动联系公司hr和公司员工，询问公司人才岗位需求"></a>5. 学会主动联系公司hr和公司员工，询问公司人才岗位需求</h3>
+
       
       <!-- reward -->
       
@@ -171,7 +151,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%81%8C%E4%B8%9A-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/" rel="tag">职业&人生思考</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
 
     </footer>
@@ -182,19 +162,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/12/10/XDU-Python-OJ%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            XDU Python OJ刷题总结
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/04/09/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/" class="article-nav-link">
+      <a href="/2020/05/26/%E8%BD%AC%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%91%98-%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E8%A7%84%E5%88%92/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">如何读论文</div>
+        <div class="article-nav-title">职业生涯思考</div>
       </a>
     
   </nav>

@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>XDU Python OJ刷题总结</title>
+    <url>/2020/12/10/XDU-Python-OJ%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="XDU-Python-OJ刷题总结"><a href="#XDU-Python-OJ刷题总结" class="headerlink" title="XDU Python OJ刷题总结"></a>XDU Python OJ刷题总结</h1><p>这学期选了李隐峰老师的<strong>Python网络数据处理</strong>这门课，虽说到目前为止这门课绝大部分时间都在讲解Python语言的一些基础语法，但是由于这门课安排了课下OJ系统刷题以及上周日(12.6日)刚考完的线上OJ系统机考，所以还是有一定收获的。<br><a id="more"></a></p>
+<blockquote>
+<p>刷题地址：<a href="https://python.xidian.edu.cn/" target="_blank" rel="noopener">XDU Python OJ</a><br>(貌似只有选了这门课的学生才能使用这个OJ系统，没有对外开放注册入口)</p>
+</blockquote>
+<ul>
+<li><p>关于本地程序的简易调试方法<br>OJ题目的程序写完后测试数据时，每次都从网页复制数据再粘贴到运行终端多少有些麻烦，而且可能有时候还不方便随时添加自己想要测试的数据，同时对输出的数据进行查阅和调试也不太方便<br>所以参考别人的博客(<a href="https://blog.csdn.net/yanxiangtianji/article/details/8826803" target="_blank" rel="noopener">OJ程序简便调试方法</a>)捣鼓了下本地调试的简易方法：</p>
+<ul>
+<li><p>测试算法程序的文件夹下文件如下：<br><img src="https://gitee.com/gtjason1998/article_images/raw/master/article_images2.png" alt=""></p>
+</li>
+<li><p><code>1118.py</code>为需要测试的Python算法程序,<code>input.txt</code>中提前写入测试数据,<code>output.txt</code>是用来存放输出结果的文件</p>
+</li>
+<li><p><code>init.bat</code>脚本文件的内容如下:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1118.py&lt;input.txt &gt; output.txt</span><br><span class="line"><span class="built_in">type</span> output.txt</span><br></pre></td></tr></table></figure>
+<p><code>1118.py&lt;input.txt</code>部分表示运行1118.py并重定向输入流,将input.txt的内容作为运行1118.py时的输入，后半部分的<code>&gt; output.txt</code>表示将程序的输出结果重定向输出至<code>output.txt</code>文件中<br><code>type output.txt</code>表示将output.txt的内容输出至运行终端，Windows系统平台的<code>type</code>命令类似Linux系统终端下的<code>cat</code>命令</p>
+</li>
+<li><p>此时写好程序并在input.txt中写好需要测试的输入数据后，直接在对应路径下运行init.bat脚本即可</p>
+</li>
+</ul>
+</li>
+<li><p>一道模拟考试时卡住的题目<br>其实挺简单的一道题，当时脑抽了转不过弯来(<del>其实主要还是因为我人菜</del>)，题目如下</p>
+<blockquote>
+<ul>
+<li>题目描述<br>输入一个嵌套列表，嵌套层次不限，根据层次数来求列表元素的加权个数和。<br>第一层每个元素算一个元素，第二层每个元素算2个元素，第三层每个元素算3个元素，第四层每个元素算4个元素,…,以此类推进行计算。</li>
+<li>输入<br>在一行中输入一个列表。</li>
+<li>输出<br>在一行中输出加权元素个数值。</li>
+<li>样例输入<br><strong><code>[1,2,[3,4,[5,6],7],8]</code></strong></li>
+<li>样例输出<br><strong><code>15</code></strong></li>
+</ul>
+</blockquote>
+<ul>
+<li>正确解题思路✔<br>通过递归的方法，判断当层有没有列表，存在列表就统计该层非列表元素并乘以深度权值同时向内层列表递归并将深度权值加1，不存在列表时直接用该层元素个数乘以权值返回即可，注意递归需设置终止条件</li>
+<li>错误解题思路❌<br>模拟考时脑抽了想着用字符串操作来做，先将输入字符串中的<code>,</code>替换为空字符，然后每次遇到<code>[</code>就将权值加1，遇到<code>]</code>就将权值减1，忽略了替换掉<code>,</code>后，元素<code>12</code>将被判定为<code>1</code>和<code>2</code>两个元素，进而计算出错误的结果</li>
+<li>程序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(base,depth)</span>:</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">not</span> ([i <span class="keyword">for</span> i <span class="keyword">in</span> base <span class="keyword">if</span> type(i) == list])):</span><br><span class="line">    <span class="keyword">return</span> len([i <span class="keyword">for</span> i <span class="keyword">in</span> base])*depth</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    temp = [i <span class="keyword">for</span> i <span class="keyword">in</span> base <span class="keyword">if</span> type(i) == list]</span><br><span class="line">    tempAmount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> temp:</span><br><span class="line">        tempAmount += fn(i,depth+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> len([i <span class="keyword">for</span> i <span class="keyword">in</span> base <span class="keyword">if</span> type(i) == int])*depth + tempAmount</span><br><span class="line">List = eval(input())</span><br><span class="line">print(fn(List,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>心态建设方面<br>其实感觉自己一直就是一个心态不是特别好的人，尤其是OJ系统里这种考试，看着大家切题的提交记录并不停在实时排行榜上刷新浮动时，自己多少会有些紧张，如果自己恰好在某题卡住，那可能基本凉凉。<br><strong>其实人生是场马拉松，不是那么一场两场考试决定的，多和自己比较，总和别人比较很有可能会搞坏自己的心态</strong>，只要自己能够不停的进步就很好，不断进步带来的正反馈是很实时的，害怕犯错害怕失败其实也是玻璃心的一种表现，其实我们的人生有一定的容错性，且我们需要努力去不断地给我们的试错成本加筹码，提高我们人生的容错性。<br>最后的最后，我自己也不过就一个普通人，不会的题不要自己死磕，厉害的人很多，学会看看别人的解题思路，模仿是学习的第一步。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>职业生涯思考</title>
     <url>/2020/05/26/%E8%BD%AC%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%91%98-%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[<p>该篇博客参考自以下视频，总结提炼并引入了一部分自己的思考：</p>
